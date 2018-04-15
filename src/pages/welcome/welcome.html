@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Welcome</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+
+    <ion-slides>
+        <ion-slide style="background-image: url('assets/img/conference_bg.jpg'); ">
+
+            <div class="top_title">African blockchain conference 2018</div>
+            <div class="date_schedule text-center">
+                23 - 24 May 3018
+            </div>
+
+            <div style="padding-top: 2em; padding-bottom: 2em">
+                <button ion-button style="background-color: #229A61" (click)="goToMyPage('BookingPage')">
+                    Book your sit
+                </button>
+                <button ion-button style="background-color: #007aff" (click)="goToMyPage('LoginPage')">
+                    Explore
+                </button>
+            </div>
+            <p>
+                <span class="top_title text-center">Time left <br>
+                40  23  32  09</span>
+
+            </p>
+
+        </ion-slide>
+        <ion-slide style="background-image: url('assets/img/slide_properties.jpg')">
+            <p>African blockchain conference 2018</p>
+        </ion-slide>
+
+        <ion-slide style="background-image: url('assets/img/slide_brokers.jpg')">
+            <p> Meet the team</p>
+        </ion-slide>
+
+        <ion-slide style="background-image: url('assets/img/slide_favorites.jpg')">
+            <p>Conference</p>
+        </ion-slide>
+
+    </ion-slides>
+
+</ion-content>
