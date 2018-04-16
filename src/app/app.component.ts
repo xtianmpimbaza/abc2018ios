@@ -3,11 +3,13 @@ import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import {PropertyListPage} from '../pages/property-list/property-list';
-import {BrokerListPage} from '../pages/broker-list/broker-list';
-import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
+// import {PropertyListPage} from '../pages/property-list/property-list';
+// import {BrokerListPage} from '../pages/broker-list/broker-list';
+// import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
+import {PropertyListPage} from "../pages/property-list/property-list";
+import {BrokerListPage} from "../pages/broker-list/broker-list";
 
 export interface MenuItem {
     title: string;
@@ -29,24 +31,29 @@ export class MyApp {
 
     helpMenuItems: Array<MenuItem>;
 
+    // constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public navCtrl: NavController) {
     constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
         this.initializeApp();
 
         this.appMenuItems = [
             {title: 'Speakers', component: PropertyListPage, icon: 'ios-contact'},
             {title: 'Sponsors', component: BrokerListPage, icon: 'people'},
-            {title: 'Exhibitors', component: FavoriteListPage, icon: 'star'},
-            {title: 'Home', component: WelcomePage, icon: 'home'},
+          // {title: 'Home', component: WelcomePage, icon: 'home'},
+          //   {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
+          //   {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'},
+          //   {title: 'Speakers', component: SpeakersPage, icon: 'people'},
+          //   {title: 'Partners', component: SponsorsPage, icon: 'ios-contacts'}
+
         ];
 
         this.accountMenuItems = [
-            // {title: 'My Account', component: WelcomePage, icon: 'ios-contact'},
-            {title: 'Logout', component: WelcomePage, icon: 'log-out'},
+            {title: 'My Account', component: WelcomePage, icon: 'ios-contact'},
+            // {title: 'Login', component: LoginPage, icon: 'md-log-in'}
         ];
 
         this.helpMenuItems = [
-            {title: 'Event map', component: WelcomePage, icon: 'ios-map'},
-            {title: 'About', component: AboutPage, icon: 'information-circle'},
+            // {title: 'Location', component: EventmapPage, icon: 'ios-map'},
+            {title: 'About', component: AboutPage, icon: 'information-circle'}
         ];
 
     }
@@ -64,5 +71,6 @@ export class MyApp {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);
+        // this.navCtrl.push(page.component);
     }
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import {WelcomePage} from '../pages/welcome/welcome';
@@ -27,7 +27,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PropertyDetailPage,
     FavoriteListPage,
     BrokerListPage,
-    BrokerDetailPage
+    BrokerDetailPage,
+    WelcomePage,
+    AboutPage,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PropertyDetailPage,
     FavoriteListPage,
     BrokerListPage,
-    BrokerDetailPage
+    BrokerDetailPage,
+    WelcomePage,
+    AboutPage
   ],
   providers: [
     StatusBar,

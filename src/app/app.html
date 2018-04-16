@@ -1,11 +1,11 @@
 <ion-menu [content]="content">
 
   <ion-content>
-    <img src="assets/img/dreamhouse-logo.svg" class="menu-logo"/>
+    <img src="assets/img/conference-logo.png" class="menu-logo"/>
 
     <ion-list>
       <ion-list-header>
-        Members
+        Event
       </ion-list-header>
       <button menuClose ion-item *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon"></ion-icon>
