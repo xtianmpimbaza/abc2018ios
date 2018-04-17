@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+import {BrokerDetailPage} from "../broker-detail/broker-detail";
+import {BrokerService} from "../../providers/broker-service-mock";
 
-/**
- * Generated class for the SpeakersPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 @IonicPage()
 @Component({
   selector: 'page-speakers',
@@ -14,11 +11,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SpeakersPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  speakers: Array<any>;
+
+  constructor(public navCtrl: NavController, public service: BrokerService) {
+    service.findAll().then(data => this.speakers = data);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SpeakersPage');
+  openSpeakerDetail(broker) {
+    this.navCtrl.push(BrokerDetailPage, broker);
   }
 
 }

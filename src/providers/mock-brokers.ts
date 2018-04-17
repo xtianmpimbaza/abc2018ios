@@ -1,75 +1,63 @@
 let brokers: Array<any> = [
     {
         id: 1,
-        name: "Caroline Kingsley",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "caroline@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/caroline_kingsley.jpg"
+        name: "Prof. Tumusiime-Mutebile",
+        title: "Governor, Bank of Uganda",
+        phone: "",
+        mobilePhone: "",
+        email: "info@africanblockchain.org",
+        country: "Uganda",
+        picture: "https://africanblockchain.org/wp-content/uploads/2018/03/mutebile-320x320.jpg"
     },
     {
         id: 2,
-        name: "Michael Jones",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "michael@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/michael_jones.jpg"
+        name: "Hon. Bagiire Vincent Waiswa",
+        title: "Permanent Secretary, Ministry of ICT",
+      phone: "",
+      mobilePhone: "",
+      email: "info@africanblockchain.org",
+        country: "Uganda",
+        picture: "https://africanblockchain.org/wp-content/uploads/2018/04/Hon.-Bagiire-Vincent-Waiswa-e1521045819329-768x768-320x320.jpg"
     },
     {
         id: 3,
-        name: "Jonathan Bradley",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "jonathan@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/jonathan_bradley.jpg"
+        name: "Llew Claasen",
+        title: "Executive Director, Bitcoin Foundation",
+      phone: "",
+      mobilePhone: "",
+      email: "info@africanblockchain.org",
+        country: "USA",
+        picture: "https://africanblockchain.org/wp-content/uploads/2018/04/llew-claasen.jpg"
     },
     {
         id: 4,
-        name: "Jennifer Wu",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "jen@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/jennifer_wu.jpg"
+        name: "Dr. Dorothy Okello",
+        title: "Chairperson, Communications Commission",
+      phone: "",
+      mobilePhone: "",
+      email: "info@africanblockchain.org",
+        country: "Uganda",
+        picture: "https://africanblockchain.org/wp-content/uploads/2018/03/Dr.-Dorothy-Okello-e1521300593202-320x320.jpg"
     },
     {
         id: 5,
-        name: "Olivia Green",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "olivia@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/olivia_green.jpg"
+        name: "Dr. Bitange Ndemo",
+        title: "Chairman, Blockchain Taskforce",
+      phone: "",
+      mobilePhone: "",
+      email: "info@africanblockchain.org",
+        country: "Kenya",
+        picture: "https://africanblockchain.org/wp-content/uploads/2018/03/Bitange-Ndemo.jpg"
     },
     {
         id: 6,
-        name: "Miriam Aupont",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "miriam@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/miriam_aupont.jpg"
-    },
-    {
-        id: 7,
-        name: "Michelle Lambert",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "michelle@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/michelle_lambert.jpg"
-    },
-    {
-        id: 8,
-        name: "Victor Ochoa",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "victor@ionicrealty.com",
-        picture: "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/victor_ochoa.jpg"
+        name: "Changpeng Zhao",
+        title: "CEO, Binance",
+      phone: "",
+      mobilePhone: "",
+      email: "info@africanblockchain.org",
+        country: "Japan",
+        picture: "https://africanblockchain.org/wp-content/uploads/2018/04/CZ-320x320.jpg"
     }
 ];
 

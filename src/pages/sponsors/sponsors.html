@@ -13,6 +13,19 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
 
+    <button ion-item *ngFor="let sponsor of sponsors">
+      <!--<ion-avatar >-->
+      <ion-row class="sponsor_card">
+        <img src="{{sponsor.picture}}"/>
+      </ion-row>
+
+      <!--</ion-avatar>-->
+      <!--<h2>{{speaker.name}}</h2>-->
+      <!--<p>{{speaker.title}}</p>-->
+    </button>
+
+  </ion-list>
 </ion-content>

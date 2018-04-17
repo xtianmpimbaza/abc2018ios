@@ -20,6 +20,7 @@ export class HomePage {
   goToMyPage(page:string) {
     // go to the MyPage component
     this.navCtrl.push(page);
+
   }
 
 }

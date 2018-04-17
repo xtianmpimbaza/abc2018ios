@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {BreakoutService} from "../../services/breakout-service";
 
-/**
- * Generated class for the BreakoutPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-breakout',
@@ -14,11 +9,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BreakoutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  // constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BreakoutPage');
-  }
+  viewMode: string = "first";
+  firstSchedule: Array<any>;
+  secondSchedule: Array<any>;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, service: BreakoutService) {
+    service.getBreakOne().then(data => this.firstSchedule = data);
+    service.getBreakTwo().then(data => this.secondSchedule = data);
+  }
 }

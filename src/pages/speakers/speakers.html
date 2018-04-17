@@ -1,9 +1,3 @@
-<!--
-  Generated template for the SpeakersPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -13,6 +7,18 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-list>
+
+    <button ion-item *ngFor="let speaker of speakers" (click)="openSpeakerDetail(speaker)">
+      <ion-avatar item-left>
+        <img src="{{speaker.picture}}"/>
+      </ion-avatar>
+      <h2>{{speaker.name}}</h2>
+      <p>{{speaker.title}}</p>
+    </button>
+
+  </ion-list>
 
 </ion-content>

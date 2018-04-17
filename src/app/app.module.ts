@@ -17,6 +17,10 @@ import {BrokerService} from "../providers/broker-service-mock";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {SponsorService} from "../providers/sponsor-service-mock";
+import {ScheduleOneService} from "../providers/schedule-service";
+import {ScheduleTwoService} from "../providers/scheduletwo-service";
+import {BreakoutService} from "../services/breakout-service";
 
 @NgModule({
   declarations: [
@@ -53,7 +57,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     PropertyService,
+    SponsorService,
     BrokerService,
+    BreakoutService,
+    ScheduleOneService,
+    ScheduleTwoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

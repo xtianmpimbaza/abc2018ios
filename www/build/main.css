@@ -24314,20 +24314,21 @@ ion-navbar.toolbar {
 }
 
 .menu-logo {
-  height: 80px;
-  margin: 12px 0 0 90px;
+  max-height: 80px;
+  padding: 10px;
 }
 
 .about-header {
-  background-color: #434954;
+  background-color: #f4f4f4;
   padding: 16px;
+  border-bottom: thin solid gray;
   width: 100%;
   min-height: 150px;
   text-align: center;
 }
 
 .about-header img {
-  max-width: 200px;
+  max-width: 100%;
   min-height: 115px;
   margin-left: -15px;
   padding: 25px 0 20px 0;
@@ -24355,6 +24356,11 @@ ion-navbar.toolbar {
 .ios .about-info ion-icon {
   width: auto;
   margin-right: 10px;
+}
+
+page-breakout .hall_name {
+  color: darkred;
+  font-weight: bold;
 }
 
 .broker ion-card {
@@ -24392,8 +24398,10 @@ ion-navbar.toolbar {
 page-home ion-content ion-icon {
   font-size: 50px;
   color: #cc050f;
+}
+
+page-home ion-content .header_ion {
   text-align: center;
-  content-align: ce;
 }
 
 page-home ion-content .title_card {
@@ -24424,6 +24432,12 @@ ion-note {
 
 ion-footer {
   padding: 8px 16px !important;
+}
+
+page-sponsors .sponsor_card {
+  max-height: 200px;
+  width: auto;
+  text-align: center;
 }
 
 page-welcome {

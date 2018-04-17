@@ -8,7 +8,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 // import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
-import {PropertyListPage} from "../pages/property-list/property-list";
+// import {PropertyListPage} from "../pages/property-list/property-list";
 import {BrokerListPage} from "../pages/broker-list/broker-list";
 
 export interface MenuItem {
@@ -36,9 +36,11 @@ export class MyApp {
         this.initializeApp();
 
         this.appMenuItems = [
-            {title: 'Speakers', component: PropertyListPage, icon: 'ios-contact'},
-            {title: 'Sponsors', component: BrokerListPage, icon: 'people'},
-          // {title: 'Home', component: WelcomePage, icon: 'home'},
+
+            {title: 'Home', component: WelcomePage, icon: 'home'},
+            {title: 'Speakers', component: BrokerListPage, icon: 'ios-contact'},
+            // {title: 'Partners', component: SponsorsPage, icon: 'logo-bitcoin'},
+
           //   {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
           //   {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'},
           //   {title: 'Speakers', component: SpeakersPage, icon: 'people'},
@@ -47,7 +49,7 @@ export class MyApp {
         ];
 
         this.accountMenuItems = [
-            {title: 'My Account', component: WelcomePage, icon: 'ios-contact'},
+            {title: 'Book a seat', component: WelcomePage, icon: 'ios-contact'},
             // {title: 'Login', component: LoginPage, icon: 'md-log-in'}
         ];
 
