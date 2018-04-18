@@ -3,13 +3,10 @@ import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-// import {PropertyListPage} from '../pages/property-list/property-list';
-// import {BrokerListPage} from '../pages/broker-list/broker-list';
-// import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
-// import {PropertyListPage} from "../pages/property-list/property-list";
 import {BrokerListPage} from "../pages/broker-list/broker-list";
+// import {FCM} from "@ionic-native/fcm";
 
 export interface MenuItem {
     title: string;
@@ -31,20 +28,19 @@ export class MyApp {
 
     helpMenuItems: Array<MenuItem>;
 
-    // constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public navCtrl: NavController) {
     constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+      // this.fcm.getToken().then(token => {
+      //   // Your best bet is to here store the token on the user's profile on the
+      //   // Firebase database, so that when you want to send notifications to this
+      //   // specific user you can do it from Cloud Functions.
+      //
+      // });
         this.initializeApp();
 
         this.appMenuItems = [
 
             {title: 'Home', component: WelcomePage, icon: 'home'},
-            {title: 'Speakers', component: BrokerListPage, icon: 'ios-contact'},
-            // {title: 'Partners', component: SponsorsPage, icon: 'logo-bitcoin'},
-
-          //   {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
-          //   {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'},
-          //   {title: 'Speakers', component: SpeakersPage, icon: 'people'},
-          //   {title: 'Partners', component: SponsorsPage, icon: 'ios-contacts'}
+            {title: 'Speakers', component: BrokerListPage, icon: 'ios-contact'}
 
         ];
 

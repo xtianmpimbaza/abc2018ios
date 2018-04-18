@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>sponsors</ion-title>
+    <ion-title>Team</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,17 +15,26 @@
 
 <ion-content>
   <ion-list>
-
-    <button ion-item *ngFor="let sponsor of sponsors">
-      <!--<ion-avatar >-->
-      <ion-row class="sponsor_card">
-        <img src="{{sponsor.picture}}"/>
-      </ion-row>
-
+    <button ion-item *ngFor="let speaker of attendees" (click)="openSpeakerDetail(speaker)">
+      <!--<ion-avatar item-left>-->
+      <!--<img src="{{speaker.picture}}"/>-->
       <!--</ion-avatar>-->
-      <!--<h2>{{speaker.name}}</h2>-->
-      <!--<p>{{speaker.title}}</p>-->
+      <h2>{{speaker.Name}}</h2>
+      <p>{{speaker.Email}}</p>
     </button>
-
   </ion-list>
+  <!--<ion-list>-->
+
+  <!--<button ion-item *ngFor="let sponsor of sponsors" (click)="send()">-->
+  <!--&lt;!&ndash;<ion-avatar >&ndash;&gt;-->
+  <!--<ion-row class="sponsor_card">-->
+  <!--<img src="{{sponsor.picture}}"/>-->
+  <!--</ion-row>-->
+
+  <!--&lt;!&ndash;</ion-avatar>&ndash;&gt;-->
+  <!--&lt;!&ndash;<h2>{{speaker.name}}</h2>&ndash;&gt;-->
+  <!--&lt;!&ndash;<p>{{speaker.title}}</p>&ndash;&gt;-->
+  <!--</button>-->
+
+  <!--</ion-list>-->
 </ion-content>

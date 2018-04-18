@@ -21,6 +21,10 @@ import {SponsorService} from "../providers/sponsor-service-mock";
 import {ScheduleOneService} from "../providers/schedule-service";
 import {ScheduleTwoService} from "../providers/scheduletwo-service";
 import {BreakoutService} from "../services/breakout-service";
+import {EmailComposer} from "@ionic-native/email-composer";
+import {AttendeesService} from "../services/attendees-service";
+import {AttendeeDetailsPage} from "../pages/attendee-details/attendee-details";
+import {FCM} from "@ionic-native/fcm";
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import {BreakoutService} from "../services/breakout-service";
     AboutPage,
     PropertyListPage,
     PropertyDetailPage,
+    AttendeeDetailsPage,
     FavoriteListPage,
     BrokerListPage,
     BrokerDetailPage,
@@ -47,6 +52,7 @@ import {BreakoutService} from "../services/breakout-service";
     AboutPage,
     PropertyListPage,
     PropertyDetailPage,
+    AttendeeDetailsPage,
     FavoriteListPage,
     BrokerListPage,
     BrokerDetailPage,
@@ -62,6 +68,9 @@ import {BreakoutService} from "../services/breakout-service";
     BreakoutService,
     ScheduleOneService,
     ScheduleTwoService,
+    AttendeesService,
+    EmailComposer,
+    // FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
