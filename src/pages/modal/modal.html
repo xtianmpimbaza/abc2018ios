@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Send Email</ion-title>
+    <ion-buttons end>
+      <!--<button ion-button (click)="send()">Send</button>-->
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="credentialsForm">
+    <ion-list>
+
+      <div>
+        <ion-label stacked>Email</ion-label>
+        <ion-input style="border-bottom: thin solid gray" type="text"
+                   [formControl]="credentialsForm.controls['email']"></ion-input>
+      </div>
+
+      <div>
+        <ion-label stacked>Message</ion-label>
+        <ion-textarea class="textarea" name="description"
+                      [formControl]="credentialsForm.controls['message']"></ion-textarea>
+      </div>
+      <div>
+        <!--<ion-buttons stacked (click)="send()">Submit</ion-buttons>-->
+        <button ion-button style="background-color: #007aff" (click)="send()">
+          Submit
+        </button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

@@ -24421,6 +24421,12 @@ page-home ion-content .icon_center {
   text-align: center;
 }
 
+page-modal .textarea {
+  min-height: 6em;
+  border: thin solid gray;
+  border-radius: 5px;
+}
+
 ion-note {
   color: #cc050f !important;
   font-size: 1.4rem !important;
@@ -24456,7 +24462,6 @@ page-welcome ion-slide p {
   background-color: rgba(9, 76, 152, 0.85);
   color: #FFFFFF;
   padding: 20px 20px 20px 20px;
-  font-size: 2.7rem;
   margin-bottom: 0;
 }
 
@@ -24469,15 +24474,14 @@ page-welcome ion-slide img {
 page-welcome ion-slide .top_title {
   top: 0;
   color: white;
-  font-size: 2.7rem;
-  font-weight: bold;
 }
 
 page-welcome ion-slide .date_schedule {
   color: white;
   font-size: 2rem;
+  padding: 5px;
   font-weight: bold;
-  border: thick solid white;
+  border: 3px solid white;
   margin-top: 1em;
   margin-bottom: 1em;
   width: 50%;

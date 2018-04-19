@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 338:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(350);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(353);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HomePageModule = (function () {
-    function HomePageModule() {
+var LoginPageModule = (function () {
+    function LoginPageModule() {
     }
-    return HomePageModule;
+    return LoginPageModule;
 }());
-HomePageModule = __decorate([
+LoginPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]
+            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]
         ]
     })
-], HomePageModule);
+], LoginPageModule);
 
-//# sourceMappingURL=home.module.js.map
+//# sourceMappingURL=login.module.js.map
 
 /***/ }),
 
-/***/ 350:
+/***/ 353:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,31 +60,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the HomePage page.
+ * Generated class for the LoginPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var HomePage = (function () {
-    function HomePage(navCtrl, navParams) {
+var LoginPage = (function () {
+    function LoginPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    HomePage.prototype.goToMyPage = function (page) {
-        // go to the MyPage component
-        this.navCtrl.push(page);
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
     };
-    return HomePage;
+    return LoginPage;
 }());
-HomePage = __decorate([
+LoginPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"F:\abconference\src\pages\home\home.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Main Menu</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n  <!--Dashboard here-->\n  <ion-grid>\n\n    <ion-row>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'EventPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-contact"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">About</h2></ion-row>\n            <!--<ion-row class="cant_card">Attendees profiles</ion-row>-->\n            <ion-row><h4 class="cant_card">About the event</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'GetinvolvedPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="md-reorder"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Get involved</h2></ion-row>\n            <!--<ion-row class="cant_card">Be part of us</ion-row>-->\n            <ion-row><h4 class="cant_card">Be part of us</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'SpeakersPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-volume-up"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Speakers</h2></ion-row>\n            <!--<ion-row class="cant_card">Speakers\' profiles</ion-row>-->\n            <ion-row><h4 class="cant_card">Speakers\' profiles</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'SponsorsPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="logo-bitcoin"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Team</h2></ion-row>\n            <ion-row><h4 class="cant_card">Teams\' profiles</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'SchedulePage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-clipboard"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Schedule</h2></ion-row>\n            <!--<ion-row class="cant_card">Event\'s program</ion-row>-->\n            <ion-row><h4 class="cant_card">Event\'s program</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'BreakoutPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-alarm"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Breakout</h2></ion-row>\n            <ion-row><h4 class="cant_card">Breakout Sessions</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"F:\abconference\src\pages\home\home.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"F:\abconference\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\nLogin page here\n</ion-content>\n'/*ion-inline-end:"F:\abconference\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], HomePage);
+], LoginPage);
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

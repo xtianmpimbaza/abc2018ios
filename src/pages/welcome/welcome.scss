@@ -16,7 +16,7 @@ page-welcome {
       //background-color: rgba(212,5,15, .6);
       color: #FFFFFF;
       padding: 20px 20px 20px 20px;
-      font-size: 2.7rem;
+      //font-size: 2.7rem;
       margin-bottom: 0;
     }
 
@@ -29,14 +29,15 @@ page-welcome {
     .top_title{
       top: 0;
       color: white;
-      font-size: 2.7rem;
-      font-weight:bold;
+      //font-size: 2.7rem;
+      //font-weight:bold;
     }
     .date_schedule{
       color: white;
       font-size: 2rem;
+      padding: 5px;
       font-weight:bold;
-      border: thick solid white;
+      border: 3px solid white;
       margin-top: 1em;
       margin-bottom: 1em;
       width: 50%;

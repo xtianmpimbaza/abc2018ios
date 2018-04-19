@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 337:
+/***/ 339:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__getinvolved__ = __webpack_require__(349);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetinvolvedPageModule", function() { return GetinvolvedPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(352);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var GetinvolvedPageModule = (function () {
-    function GetinvolvedPageModule() {
+var HomePageModule = (function () {
+    function HomePageModule() {
     }
-    return GetinvolvedPageModule;
+    return HomePageModule;
 }());
-GetinvolvedPageModule = __decorate([
+HomePageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__getinvolved__["a" /* GetinvolvedPage */],
+            __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__getinvolved__["a" /* GetinvolvedPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__getinvolved__["a" /* GetinvolvedPage */]
+            __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]
         ]
     })
-], GetinvolvedPageModule);
+], HomePageModule);
 
-//# sourceMappingURL=getinvolved.module.js.map
+//# sourceMappingURL=home.module.js.map
 
 /***/ }),
 
-/***/ 349:
+/***/ 352:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(28);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetinvolvedPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,33 +59,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var GetinvolvedPage = (function () {
-    function GetinvolvedPage(navCtrl, navParams, sanitize) {
+/**
+ * Generated class for the HomePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var HomePage = (function () {
+    function HomePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.sanitize = sanitize;
-        this.viewMode = "list";
     }
-    GetinvolvedPage.prototype.urlExhibitors = function () {
-        this.my_url = "https://africanblockchain.org/exhibit/get-involved/";
-        return this.sanitize.bypassSecurityTrustResourceUrl(this.my_url);
+    HomePage.prototype.goToMyPage = function (page) {
+        // go to the MyPage component
+        this.navCtrl.push(page);
     };
-    GetinvolvedPage.prototype.urlSponsors = function () {
-        this.my_url = "https://africanblockchain.org/abc-sponsors/get-involved/";
-        return this.sanitize.bypassSecurityTrustResourceUrl(this.my_url);
-    };
-    return GetinvolvedPage;
+    return HomePage;
 }());
-GetinvolvedPage = __decorate([
+HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-getinvolved',template:/*ion-inline-start:"F:\abconference\src\pages\getinvolved\getinvolved.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>getinvolved</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="property-list">\n\n  <div *ngIf="viewMode===\'list\'" style="width:100%;height:100%;">\n    <iframe height="100%" width="100%" [src]="urlExhibitors()"></iframe>\n  </div>\n  <div *ngIf="viewMode===\'map\'" style="width:100%;height:100%;">\n    <iframe height="100%" width="100%" [src]="urlSponsors()"></iframe>\n  </div>\n\n</ion-content>\n\n<ion-footer padding>\n  <ion-segment [(ngModel)]="viewMode">\n    <ion-segment-button value="list">\n      <!--<ion-icon name="list"></ion-icon>-->\n      Exhibitor\n    </ion-segment-button>\n    <ion-segment-button value="map">\n      <!--<ion-icon name="map"></ion-icon>-->\n      Sponsor\n    </ion-segment-button>\n  </ion-segment>\n</ion-footer>\n\n'/*ion-inline-end:"F:\abconference\src\pages\getinvolved\getinvolved.html"*/,
+        selector: 'page-home',template:/*ion-inline-start:"F:\abconference\src\pages\home\home.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Main Menu</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n  <!--Dashboard here-->\n  <ion-grid>\n\n    <ion-row>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'EventPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-contact"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">About</h2></ion-row>\n            <!--<ion-row class="cant_card">Attendees profiles</ion-row>-->\n            <ion-row><h4 class="cant_card">About the event</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'GetinvolvedPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="md-reorder"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Get involved</h2></ion-row>\n            <!--<ion-row class="cant_card">Be part of us</ion-row>-->\n            <ion-row><h4 class="cant_card">Be part of us</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'SpeakersPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-volume-up"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Speakers</h2></ion-row>\n            <!--<ion-row class="cant_card">Speakers\' profiles</ion-row>-->\n            <ion-row><h4 class="cant_card">Speakers\' profiles</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'SponsorsPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-people"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Team</h2></ion-row>\n            <ion-row><h4 class="cant_card">Teams\' profiles</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'SchedulePage\')">\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-calendar"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Schedule</h2></ion-row>\n            <!--<ion-row class="cant_card">Event\'s program</ion-row>-->\n            <ion-row><h4 class="cant_card">Event\'s program</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n      <ion-col col-6>\n        <ion-card (click)="goToMyPage(\'BreakoutPage\')">\n\n          <ion-card-header>\n            <div class="header_ion">\n              <ion-icon name="ios-alarm"></ion-icon>\n            </div>\n          </ion-card-header>\n\n          <ion-card-content>\n            <ion-row><h2 class="title_card">Breakout</h2></ion-row>\n            <ion-row><h4 class="cant_card">Breakout Sessions</h4></ion-row>\n          </ion-card-content>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"F:\abconference\src\pages\home\home.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* DomSanitizer */]])
-], GetinvolvedPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+], HomePage);
 
-//# sourceMappingURL=getinvolved.js.map
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

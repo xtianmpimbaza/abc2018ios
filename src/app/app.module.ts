@@ -24,7 +24,8 @@ import {BreakoutService} from "../services/breakout-service";
 import {EmailComposer} from "@ionic-native/email-composer";
 import {AttendeesService} from "../services/attendees-service";
 import {AttendeeDetailsPage} from "../pages/attendee-details/attendee-details";
-import {FCM} from "@ionic-native/fcm";
+// import {FCM} from "@ionic-native/fcm";
+import {EmailService} from "../services/email-service";
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import {FCM} from "@ionic-native/fcm";
     ScheduleOneService,
     ScheduleTwoService,
     AttendeesService,
+    EmailService,
     EmailComposer,
     // FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
