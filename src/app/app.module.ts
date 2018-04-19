@@ -26,6 +26,7 @@ import {AttendeesService} from "../services/attendees-service";
 import {AttendeeDetailsPage} from "../pages/attendee-details/attendee-details";
 // import {FCM} from "@ionic-native/fcm";
 import {EmailService} from "../services/email-service";
+import {GlobalVars} from "../providers/global-vars";
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import {EmailService} from "../services/email-service";
     AttendeesService,
     EmailService,
     EmailComposer,
+    GlobalVars,
     // FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

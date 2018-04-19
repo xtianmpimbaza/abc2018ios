@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ViewController} from 'ionic-angular';
 
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {GlobalVars} from "../../providers/global-vars";
+import {Http} from "@angular/http";
 
 @IonicPage()
 @Component({
@@ -9,10 +11,17 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-receipient: string;
-
+  receipient: string;
+  data:any = {};
   credentialsForm: FormGroup;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,private loadingCtrl: LoadingController,
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public viewCtrl: ViewController,
+    private global: GlobalVars,
+    private http: Http,
+    private loadingCtrl: LoadingController,
               private formBuilder: FormBuilder) {
     this.receipient = this.navParams.get('mail_receipiennt');
     this.credentialsForm = this.formBuilder.group({
@@ -20,10 +29,11 @@ receipient: string;
       email: [''],
       message: ['']
     });
+    this.data.response = '';
     this.ionViewDidLoad();
   }
 
-  public sendContact(){
+  public sendContact() {
     console.log('Form submit');
   }
 
@@ -32,8 +42,34 @@ receipient: string;
   }
 
   public send() {
-    console.log(this.credentialsForm.value);
-    this.viewCtrl.dismiss();
+    // console.log(this.credentialsForm.value);
+
+    let loader = this.loadingCtrl.create({
+      content: "Sending....."
+    });
+    loader.present();
+
+    new Promise(resolve => {
+      this.http.post(this.global.api_url, this.credentialsForm.value)
+        .map(res => res.json())
+        .subscribe((result) => {
+            console.log(result);
+
+            if (result.feedback =='success') {
+              this.global.toast("Email sent.", 'toast-error');
+              loader.dismiss();
+              this.closeModal();
+            } else {
+                this.global.toast("Error occurred, Email not sent", 'toast-error');
+                loader.dismiss();
+            }
+          },
+          (err) => {
+            this.global.toast("Error occurred, Check your internet connection", 'toast-error');
+            loader.dismiss();
+          });
+    });
+
   }
 
   ionViewDidLoad() {
