@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ViewController} from 'ionic-angular';
 
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {Validators, FormBuilder, FormGroup} from "@angular/forms";
 import {GlobalVars} from "../../providers/global-vars";
 import {Http} from "@angular/http";
 
@@ -25,9 +25,10 @@ export class ModalPage {
               private formBuilder: FormBuilder) {
     this.receipient = this.navParams.get('mail_receipiennt');
     this.credentialsForm = this.formBuilder.group({
-      mail_to: this.receipient,
-      email: [''],
-      message: ['']
+      email_to: this.receipient,
+      email_from: ['',Validators.compose([Validators.pattern(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/), Validators.required])],
+      no_html: ['']
     });
     this.data.response = '';
     this.ionViewDidLoad();

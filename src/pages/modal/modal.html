@@ -16,19 +16,19 @@
     <ion-list>
 
       <div>
-        <ion-label stacked>Email</ion-label>
+        <ion-label stacked>Youy mail</ion-label>
         <ion-input style="border-bottom: thin solid gray" type="text"
-                   [formControl]="credentialsForm.controls['email']"></ion-input>
+                   [formControl]="credentialsForm.controls['email_from']"></ion-input>
       </div>
 
       <div>
         <ion-label stacked>Message</ion-label>
         <ion-textarea class="textarea" name="description"
-                      [formControl]="credentialsForm.controls['message']"></ion-textarea>
+                      [formControl]="credentialsForm.controls['no_html']"></ion-textarea>
       </div>
       <div>
         <!--<ion-buttons stacked (click)="send()">Submit</ion-buttons>-->
-        <button ion-button style="background-color: #007aff" (click)="send()">
+        <button ion-button style="background-color: #007aff" (click)="send()" [disabled]="!credentialsForm.valid">
           Submit
         </button>
       </div>

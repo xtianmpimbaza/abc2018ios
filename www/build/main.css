@@ -24474,6 +24474,8 @@ page-welcome ion-slide img {
 page-welcome ion-slide .top_title {
   top: 0;
   color: white;
+  font-size: 2.7rem;
+  font-weight: bold;
 }
 
 page-welcome ion-slide .date_schedule {

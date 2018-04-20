@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
-import {LoadingController, ToastController} from "ionic-angular";
-import { SocialSharing } from '@ionic-native/social-sharing';
-import {Screenshot} from "@ionic-native/screenshot";
-import {GoogleAnalytics} from "@ionic-native/google-analytics";
+import { ToastController} from "ionic-angular";
+// import { SocialSharing } from '@ionic-native/social-sharing';
+// import {Screenshot} from "@ionic-native/screenshot";
+// import {GoogleAnalytics} from "@ionic-native/google-analytics";
 
 @Injectable()
 export class GlobalVars {
@@ -15,7 +15,9 @@ export class GlobalVars {
 
   constructor(private toastCtrl: ToastController) {
 
-    this.api_url = 'http://localhost:4000/sendmail/';
+    this.api_url = 'https://abc2018mailer.herokuapp.com/sendmail/';
+    // this.api_url = 'http://localhost:4000/sendmail/';
+
     this.username = '';
     this.password = '';
 
