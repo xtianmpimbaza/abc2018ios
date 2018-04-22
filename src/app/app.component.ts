@@ -5,7 +5,14 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
-import {BrokerListPage} from "../pages/broker-list/broker-list";
+import {SpeakersPage} from "../pages/speakers/speakers";
+import {PartnersPage} from "../pages/partners/partners";
+import {ExhibitorsPage} from "../pages/exhibitors/exhibitors";
+import {SponsorsPage} from "../pages/sponsors/sponsors";
+import {SchedulePage} from "../pages/schedule/schedule";
+import {BreakoutPage} from "../pages/breakout/breakout";
+import {HomePage} from "../pages/home/home";
+import {ContactUsPage} from "../pages/contact-us/contact-us";
 // import {FCM} from "@ionic-native/fcm";
 
 export interface MenuItem {
@@ -37,12 +44,27 @@ export class MyApp {
       // });
         this.initializeApp();
 
-        this.appMenuItems = [
-
+        if (this.isLogedIn()){
+          this.appMenuItems = [
+            {title: 'Home', component: HomePage, icon: 'home'},
+            {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
+            {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
+            {title: 'Exhibitors', component: ExhibitorsPage, icon: 'ios-contact'},
+            {title: 'Attendees', component: SponsorsPage, icon: 'ios-contacts'},
+            {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
+            {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
+          ];
+        } else {
+          this.appMenuItems = [
             {title: 'Home', component: WelcomePage, icon: 'home'},
-            {title: 'Speakers', component: BrokerListPage, icon: 'ios-contact'}
+            {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
+            {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
+            {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
+            {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
+          ];
+        }
 
-        ];
+
 
         this.accountMenuItems = [
             {title: 'Book a seat', component: WelcomePage, icon: 'ios-contact'},
@@ -51,10 +73,15 @@ export class MyApp {
 
         this.helpMenuItems = [
             // {title: 'Location', component: EventmapPage, icon: 'ios-map'},
-            {title: 'About', component: AboutPage, icon: 'information-circle'}
+            {title: 'About', component: AboutPage, icon: 'information-circle'},
+            {title: 'Contact us', component: ContactUsPage, icon: 'mail'}
         ];
 
     }
+
+  isLogedIn(){
+      return true;
+  }
 
     initializeApp() {
         this.platform.ready().then(() => {

@@ -11,8 +11,9 @@ import {AttendeeDetailsPage} from "../attendee-details/attendee-details";
   templateUrl: 'sponsors.html',
 })
 export class SponsorsPage {
-  // sponsors: Array<any>;
   attendees: Array<any>;
+  searchKey: string = "";
+  search: boolean = false;
 
   constructor(public navCtrl: NavController, public service: AttendeesService, private emailComposer: EmailComposer) {
     service.getAll().then(data => this.attendees = data);
@@ -22,6 +23,25 @@ export class SponsorsPage {
     this.navCtrl.push(AttendeeDetailsPage, broker);
   }
 
+  setSearch(){
+    this.search = true;
+  }
+  onInput(event) {
+    this.service.findByName(this.searchKey)
+      .then(data => {
+        this.attendees = data;
+        // if (this.viewMode === "map") {
+        //   this.showMarkers();
+        // }
+      })
+      .catch(error => alert(JSON.stringify(error)));
+  }
+
+  onCancel(event) {
+    // this.findAll();
+    this.service.getAll().then(data => this.attendees = data);
+    this.search = false;
+  }
 
   send() {
     let email = {

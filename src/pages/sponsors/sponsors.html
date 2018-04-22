@@ -6,8 +6,19 @@
 -->
 <ion-header>
 
+  <!--<ion-navbar *ngIf="!search">-->
+    <!--<ion-row>-->
+      <!--<ion-item (click)="setSearch()">Attendees-->
+        <!--<ion-icon name="ios-search" item-right></ion-icon>-->
+      <!--</ion-item>-->
+    <!--</ion-row>-->
+  <!--</ion-navbar>-->
   <ion-navbar>
-    <ion-title>Attendees</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                   (ionCancel)="onCancel($event)" placeholder="Search for attendees" autocomplete="true"></ion-searchbar>
   </ion-navbar>
 
 </ion-header>

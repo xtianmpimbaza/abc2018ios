@@ -1,14 +1,14 @@
 webpackJsonp([11],{
 
-/***/ 336:
+/***/ 358:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__breakout__ = __webpack_require__(349);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BreakoutPageModule", function() { return BreakoutPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(365);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BreakoutPageModule = (function () {
-    function BreakoutPageModule() {
+var LoginPageModule = (function () {
+    function LoginPageModule() {
     }
-    return BreakoutPageModule;
+    return LoginPageModule;
 }());
-BreakoutPageModule = __decorate([
+LoginPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__breakout__["a" /* BreakoutPage */],
+            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__breakout__["a" /* BreakoutPage */])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__breakout__["a" /* BreakoutPage */]
+            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]
         ]
     })
-], BreakoutPageModule);
+], LoginPageModule);
 
-//# sourceMappingURL=breakout.module.js.map
+//# sourceMappingURL=login.module.js.map
 
 /***/ }),
 
-/***/ 349:
+/***/ 365:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_breakout_service__ = __webpack_require__(256);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BreakoutPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,29 +59,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var BreakoutPage = (function () {
-    function BreakoutPage(navCtrl, navParams, service) {
-        var _this = this;
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var LoginPage = (function () {
+    function LoginPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        // constructor(public navCtrl: NavController, public navParams: NavParams) {
-        // }
-        this.viewMode = "first";
-        service.getBreakOne().then(function (data) { return _this.firstSchedule = data; });
-        service.getBreakTwo().then(function (data) { return _this.secondSchedule = data; });
     }
-    return BreakoutPage;
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
+    };
+    return LoginPage;
 }());
-BreakoutPage = __decorate([
+LoginPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-breakout',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\breakout\breakout.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Breakout</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="property-list">\n\n  <div *ngIf="viewMode===\'first\'" style="width:100%;height:100%;">\n    <ion-list >\n\n      <button ion-item text-wrap *ngFor="let dayone of firstSchedule">\n        <h2 class="hall_name">{{dayone.hall}}</h2>\n        <h2>{{dayone.time}}</h2>\n        <p>{{dayone.item}}</p>\n      </button>\n\n    </ion-list>\n  </div>\n  <div *ngIf="viewMode===\'second\'" style="width:100%;height:100%;">\n    <ion-list>\n\n      <button ion-item text-wrap *ngFor="let daytwo of secondSchedule">\n        <h2 class="hall_name">{{daytwo.hall}}</h2>\n        <h2>{{daytwo.time}}</h2>\n        <p>{{daytwo.item}}</p>\n      </button>\n\n    </ion-list>\n  </div>\n\n</ion-content>\n\n<ion-footer padding>\n  <ion-segment [(ngModel)]="viewMode">\n    <ion-segment-button value="first">\n      <!--<ion-icon name="list"></ion-icon>-->\n      23 May 2018\n\n    </ion-segment-button>\n    <ion-segment-button value="second">\n      <!--<ion-icon name="map"></ion-icon>-->\n      24 May 2018\n    </ion-segment-button>\n  </ion-segment>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\breakout\breakout.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\nLogin page here\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\login\login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_breakout_service__["a" /* BreakoutService */]])
-], BreakoutPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+], LoginPage);
 
-//# sourceMappingURL=breakout.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+// import {ExhibitorsDetailsPage} from "../exhibitors-details/exhibitors-details";
+import {AttendeesService} from "../../services/attendees-service";
+import {PartnersDetailsPage} from "../partners-details/partners-details";
 
-/**
- * Generated class for the PartnersPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-partners',
@@ -14,11 +11,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PartnersPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  attendees: Array<any>;
+  searchKey: string = "";
+  search: boolean = false;
+
+  constructor(public navCtrl: NavController, public service: AttendeesService) {
+    service.getAll().then(data => this.attendees = data);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PartnersPage');
+  openSpeakerDetail(exb) {
+    this.navCtrl.push(PartnersDetailsPage, exb);
   }
+
+  setSearch(){
+    this.search = true;
+  }
+  onInput(event) {
+    this.service.findByName(this.searchKey)
+      .then(data => {
+        this.attendees = data;
+        // if (this.viewMode === "map") {
+        //   this.showMarkers();
+        // }
+      })
+      .catch(error => alert(JSON.stringify(error)));
+  }
+
+  onCancel(event) {
+    // this.findAll();
+    this.service.getAll().then(data => this.attendees = data);
+    this.search = false;
+  }
+
 
 }

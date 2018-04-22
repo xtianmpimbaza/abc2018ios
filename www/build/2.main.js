@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 345:
+/***/ 357:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__schedule__ = __webpack_require__(358);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SchedulePageModule", function() { return SchedulePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__getinvolved__ = __webpack_require__(364);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetinvolvedPageModule", function() { return GetinvolvedPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,38 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SchedulePageModule = (function () {
-    function SchedulePageModule() {
+var GetinvolvedPageModule = (function () {
+    function GetinvolvedPageModule() {
     }
-    return SchedulePageModule;
+    return GetinvolvedPageModule;
 }());
-SchedulePageModule = __decorate([
+GetinvolvedPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__schedule__["a" /* SchedulePage */],
+            __WEBPACK_IMPORTED_MODULE_2__getinvolved__["a" /* GetinvolvedPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__schedule__["a" /* SchedulePage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__getinvolved__["a" /* GetinvolvedPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__schedule__["a" /* SchedulePage */]
+            __WEBPACK_IMPORTED_MODULE_2__getinvolved__["a" /* GetinvolvedPage */]
         ]
     })
-], SchedulePageModule);
+], GetinvolvedPageModule);
 
-//# sourceMappingURL=schedule.module.js.map
+//# sourceMappingURL=getinvolved.module.js.map
 
 /***/ }),
 
-/***/ 358:
+/***/ 364:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_schedule_service__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_scheduletwo_service__ = __webpack_require__(255);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchedulePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(28);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetinvolvedPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,33 +61,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-/**
- * Generated class for the SchedulePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var SchedulePage = (function () {
-    function SchedulePage(navCtrl, navParams, schOneService, schTwoService) {
-        var _this = this;
+var GetinvolvedPage = (function () {
+    function GetinvolvedPage(navCtrl, navParams, sanitize) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.viewMode = "first";
-        schOneService.findAll().then(function (data) { return _this.firstSchedule = data; });
-        schTwoService.findAll().then(function (data) { return _this.secondSchedule = data; });
+        this.sanitize = sanitize;
+        this.viewMode = "list";
     }
-    return SchedulePage;
+    GetinvolvedPage.prototype.urlExhibitors = function () {
+        this.my_url = "https://africanblockchain.org/exhibit/get-involved/";
+        return this.sanitize.bypassSecurityTrustResourceUrl(this.my_url);
+    };
+    GetinvolvedPage.prototype.urlSponsors = function () {
+        this.my_url = "https://africanblockchain.org/abc-sponsors/get-involved/";
+        return this.sanitize.bypassSecurityTrustResourceUrl(this.my_url);
+    };
+    return GetinvolvedPage;
 }());
-SchedulePage = __decorate([
+GetinvolvedPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-schedule',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\schedule\schedule.html"*/'<!--\n  Generated template for the SchedulePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Schedule</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="property-list">\n\n  <div *ngIf="viewMode===\'first\'" style="width:100%;height:100%;">\n    <ion-list >\n\n      <button ion-item text-wrap *ngFor="let dayone of firstSchedule">\n        <h2>{{dayone.time}}</h2>\n        <p>{{dayone.item}}</p>\n      </button>\n\n    </ion-list>\n  </div>\n  <div *ngIf="viewMode===\'second\'" style="width:100%;height:100%;">\n    <ion-list>\n\n      <button ion-item text-wrap *ngFor="let daytwo of secondSchedule">\n        <h2>{{daytwo.time}}</h2>\n        <p>{{daytwo.item}}</p>\n      </button>\n\n    </ion-list>\n  </div>\n\n</ion-content>\n\n<ion-footer padding>\n  <ion-segment [(ngModel)]="viewMode">\n    <ion-segment-button value="first">\n      <!--<ion-icon name="list"></ion-icon>-->\n      23 May 2018\n\n    </ion-segment-button>\n    <ion-segment-button value="second">\n      <!--<ion-icon name="map"></ion-icon>-->\n      24 May 2018\n    </ion-segment-button>\n  </ion-segment>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\schedule\schedule.html"*/,
+        selector: 'page-getinvolved',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\getinvolved\getinvolved.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Get Involved</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="property-list">\n\n  <div *ngIf="viewMode===\'list\'" style="width:100%;height:100%;">\n    <iframe height="100%" width="100%" [src]="urlExhibitors()"></iframe>\n  </div>\n  <div *ngIf="viewMode===\'map\'" style="width:100%;height:100%;">\n    <iframe height="100%" width="100%" [src]="urlSponsors()"></iframe>\n  </div>\n\n</ion-content>\n\n<ion-footer padding>\n  <ion-segment [(ngModel)]="viewMode">\n    <ion-segment-button value="list">\n      <!--<ion-icon name="list"></ion-icon>-->\n      Exhibitor\n    </ion-segment-button>\n    <ion-segment-button value="map">\n      <!--<ion-icon name="map"></ion-icon>-->\n      Sponsor\n    </ion-segment-button>\n  </ion-segment>\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\getinvolved\getinvolved.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_schedule_service__["a" /* ScheduleOneService */], __WEBPACK_IMPORTED_MODULE_3__providers_scheduletwo_service__["a" /* ScheduleTwoService */]])
-], SchedulePage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* DomSanitizer */]])
+], GetinvolvedPage);
 
-//# sourceMappingURL=schedule.js.map
+//# sourceMappingURL=getinvolved.js.map
 
 /***/ })
 

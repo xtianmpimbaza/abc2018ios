@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 337:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event__ = __webpack_require__(350);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventPageModule", function() { return EventPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal__ = __webpack_require__(366);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPageModule", function() { return ModalPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EventPageModule = (function () {
-    function EventPageModule() {
+var ModalPageModule = (function () {
+    function ModalPageModule() {
     }
-    return EventPageModule;
+    return ModalPageModule;
 }());
-EventPageModule = __decorate([
+ModalPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__event__["a" /* EventPage */],
+            __WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__event__["a" /* EventPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__event__["a" /* EventPage */]
+            __WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */]
         ]
     })
-], EventPageModule);
+], ModalPageModule);
 
-//# sourceMappingURL=event.module.js.map
+//# sourceMappingURL=modal.module.js.map
 
 /***/ }),
 
-/***/ 350:
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_global_vars__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(269);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,31 +62,78 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the EventPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var EventPage = (function () {
-    function EventPage(navCtrl, navParams) {
+
+
+
+var ModalPage = (function () {
+    function ModalPage(navCtrl, navParams, viewCtrl, global, http, loadingCtrl, formBuilder) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.global = global;
+        this.http = http;
+        this.loadingCtrl = loadingCtrl;
+        this.formBuilder = formBuilder;
+        this.data = {};
+        this.receipient = this.navParams.get('mail_receipiennt');
+        this.credentialsForm = this.formBuilder.group({
+            email_to: this.receipient,
+            email_from: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* Validators */].pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* Validators */].required])],
+            no_html: ['']
+        });
+        this.data.response = '';
+        // this.ionViewDidLoad();
     }
-    EventPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EventPage');
+    ModalPage.prototype.sendContact = function () {
+        console.log('Form submit');
     };
-    return EventPage;
+    ModalPage.prototype.closeModal = function () {
+        this.viewCtrl.dismiss();
+    };
+    ModalPage.prototype.send = function () {
+        // console.log(this.credentialsForm.value);
+        var _this = this;
+        var loader = this.loadingCtrl.create({
+            content: "Sending....."
+        });
+        loader.present();
+        new Promise(function (resolve) {
+            _this.http.post(_this.global.api_url, _this.credentialsForm.value)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (result) {
+                console.log(result);
+                if (result.feedback == 'success') {
+                    _this.global.toast("Email sent.", 'toast-error');
+                    loader.dismiss();
+                    _this.closeModal();
+                }
+                else {
+                    _this.global.toast("Error occurred, Email not sent", 'toast-error');
+                    loader.dismiss();
+                }
+            }, function (err) {
+                _this.global.toast("Error occurred, Check your internet connection", 'toast-error');
+                loader.dismiss();
+            });
+        });
+    };
+    return ModalPage;
 }());
-EventPage = __decorate([
+ModalPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-event',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\event\event.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>About The Conference</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <div class="about-header">\n    <img src="assets/img/conference-logo.png">\n  </div>\n\n  <div padding class="about-info">\n\n    <h2>Kwame Rugunda\n      <br>\n      CHAIRMAN</h2>\n<div class="justify_p">\n    <p> Ladies and Gentlemen,\n    </p>\n    <p> The dawn of a new technology often creates excitement and presents great opportunity; and as it has done in the\n      past, this great opportunity favours early adopters. Nations that responded favourably at the dawn of the\n      internet, and at the dawn of mobile telephony reaped well on the opportunity and are today prosperous nations.\n      Although Africa has missed out at the onset of many technologies, a new one is now upon us – blockchain – and\n      Africa must not miss out again!\n    </p>\n    <p> Blockchain is one of the 4th Industrial Revolution technologies (4IRs), a phrase coined by World Economic Forum\n      in reference to technologies that are fusing humanity and technology. 4IR along with its predecessors, 3IR, 2IR\n      and 1IR have all had distinct disruptive marks in history. 1IR saw the onset of the steam engine, 2IR the\n      revolution of electricity, 3IR the dawn of the internet, and 4IR the fusion of technologies blurring the lines\n      with physical, digital and biological spheres, some of which include artificial intelligence, blockchain and\n      robotics.\n    </p>\n    <p> Committed to ensuring Africa does not miss out again, but instead leverages the opportunity that new technology\n      presents, the Africa Blockchain Conference will host delegates from Africa and around the world to consider the\n      role of blockchain technology in Africa’s transformation. Through keynote speeches, panel discussions, breakout\n      sessions and exhibitions, participants will engage on how to create a thriving blockchain business ecosystem while\n      setting in place the appropriate policies for the nascent industry. Relevant use cases from different sectors in\n      the African context will also be highlighted.\n    </p>\n    <p> On behalf of the organizing committee, it is my pleasure to welcome you to Uganda – the pearl of Africa – to\n      join us for the Africa Blockchain Conference, which I trust will be informative, insightful and impactful.\n    </p>\n</div>\n  </div>\n  <!--<div>-->\n    <!--<img src="assets/img/summary_eve_list.jpg">-->\n  <!--</div>-->\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\event\event.html"*/,
+        selector: 'page-modal',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\modal\modal.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Send Email</ion-title>\n    <ion-buttons end>\n      <!--<button ion-button (click)="send()">Send</button>-->\n      <button ion-button (click)="closeModal()">Close</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <form [formGroup]="credentialsForm">\n    <ion-list>\n\n      <div>\n        <ion-label stacked>Youy mail</ion-label>\n        <ion-input style="border-bottom: thin solid gray" type="text"\n                   [formControl]="credentialsForm.controls[\'email_from\']"></ion-input>\n      </div>\n\n      <div>\n        <ion-label stacked>Message</ion-label>\n        <ion-textarea class="textarea" name="description"\n                      [formControl]="credentialsForm.controls[\'no_html\']"></ion-textarea>\n      </div>\n      <div>\n        <!--<ion-buttons stacked (click)="send()">Submit</ion-buttons>-->\n        <button ion-button style="background-color: #007aff" (click)="send()" [disabled]="!credentialsForm.valid">\n          Submit\n        </button>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\modal\modal.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], EventPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_global_vars__["a" /* GlobalVars */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* FormBuilder */]])
+], ModalPage);
 
-//# sourceMappingURL=event.js.map
+//# sourceMappingURL=modal.js.map
 
 /***/ })
 

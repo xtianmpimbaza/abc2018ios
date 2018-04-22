@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 347:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sponsors__ = __webpack_require__(360);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SponsorsPageModule", function() { return SponsorsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal__ = __webpack_require__(366);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPageModule", function() { return ModalPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,39 +18,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SponsorsPageModule = (function () {
-    function SponsorsPageModule() {
+var ModalPageModule = (function () {
+    function ModalPageModule() {
     }
-    return SponsorsPageModule;
+    return ModalPageModule;
 }());
-SponsorsPageModule = __decorate([
+ModalPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__sponsors__["a" /* SponsorsPage */],
+            __WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sponsors__["a" /* SponsorsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__sponsors__["a" /* SponsorsPage */]
+            __WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */]
         ]
     })
-], SponsorsPageModule);
+], ModalPageModule);
 
-//# sourceMappingURL=sponsors.module.js.map
+//# sourceMappingURL=modal.module.js.map
 
 /***/ }),
 
-/***/ 360:
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_attendees_service__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__attendee_details_attendee_details__ = __webpack_require__(251);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SponsorsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_global_vars__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(269);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,42 +65,75 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var SponsorsPage = (function () {
-    function SponsorsPage(navCtrl, service, emailComposer) {
-        var _this = this;
+var ModalPage = (function () {
+    function ModalPage(navCtrl, navParams, viewCtrl, global, http, loadingCtrl, formBuilder) {
         this.navCtrl = navCtrl;
-        this.service = service;
-        this.emailComposer = emailComposer;
-        service.getAll().then(function (data) { return _this.attendees = data; });
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.global = global;
+        this.http = http;
+        this.loadingCtrl = loadingCtrl;
+        this.formBuilder = formBuilder;
+        this.data = {};
+        this.receipient = this.navParams.get('mail_receipiennt');
+        this.credentialsForm = this.formBuilder.group({
+            email_to: this.receipient,
+            email_from: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* Validators */].pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* Validators */].required])],
+            no_html: ['']
+        });
+        this.data.response = '';
+        // this.ionViewDidLoad();
     }
-    SponsorsPage.prototype.openSpeakerDetail = function (broker) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__attendee_details_attendee_details__["a" /* AttendeeDetailsPage */], broker);
+    ModalPage.prototype.sendContact = function () {
+        console.log('Form submit');
     };
-    SponsorsPage.prototype.send = function () {
-        var email = {
-            to: 'xtianm4@gmail.com',
-            subject: 'Cordova Icons',
-            body: 'How are you? Nice greetings from Leipzig',
-            isHtml: true
-        };
-        this.emailComposer.open(email);
-        this.emailComposer.isAvailable().then(function (available) {
-            if (available) {
-                //Now we know we can send
-            }
+    ModalPage.prototype.closeModal = function () {
+        this.viewCtrl.dismiss();
+    };
+    ModalPage.prototype.send = function () {
+        // console.log(this.credentialsForm.value);
+        var _this = this;
+        var loader = this.loadingCtrl.create({
+            content: "Sending....."
+        });
+        loader.present();
+        new Promise(function (resolve) {
+            _this.http.post(_this.global.api_url, _this.credentialsForm.value)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (result) {
+                console.log(result);
+                if (result.feedback == 'success') {
+                    _this.global.toast("Email sent.", 'toast-error');
+                    loader.dismiss();
+                    _this.closeModal();
+                }
+                else {
+                    _this.global.toast("Error occurred, Email not sent", 'toast-error');
+                    loader.dismiss();
+                }
+            }, function (err) {
+                _this.global.toast("Error occurred, Check your internet connection", 'toast-error');
+                loader.dismiss();
+            });
         });
     };
-    return SponsorsPage;
+    return ModalPage;
 }());
-SponsorsPage = __decorate([
+ModalPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-sponsors',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\sponsors\sponsors.html"*/'<!--\n  Generated template for the SponsorsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Attendees</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let speaker of attendees" (click)="openSpeakerDetail(speaker)">\n      <ion-avatar item-left>\n      <img src="{{speaker.picture}}"/>\n      </ion-avatar>\n      <h2>{{speaker.Name}}</h2>\n      <p>{{speaker.Company}}</p>\n    </button>\n  </ion-list>\n  <!--<ion-list>-->\n\n  <!--<button ion-item *ngFor="let sponsor of sponsors" (click)="send()">-->\n  <!--&lt;!&ndash;<ion-avatar >&ndash;&gt;-->\n  <!--<ion-row class="sponsor_card">-->\n  <!--<img src="{{sponsor.picture}}"/>-->\n  <!--</ion-row>-->\n\n  <!--&lt;!&ndash;</ion-avatar>&ndash;&gt;-->\n  <!--&lt;!&ndash;<h2>{{speaker.name}}</h2>&ndash;&gt;-->\n  <!--&lt;!&ndash;<p>{{speaker.title}}</p>&ndash;&gt;-->\n  <!--</button>-->\n\n  <!--</ion-list>-->\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\sponsors\sponsors.html"*/,
+        selector: 'page-modal',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\modal\modal.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Send Email</ion-title>\n    <ion-buttons end>\n      <!--<button ion-button (click)="send()">Send</button>-->\n      <button ion-button (click)="closeModal()">Close</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <form [formGroup]="credentialsForm">\n    <ion-list>\n\n      <div>\n        <ion-label stacked>Youy mail</ion-label>\n        <ion-input style="border-bottom: thin solid gray" type="text"\n                   [formControl]="credentialsForm.controls[\'email_from\']"></ion-input>\n      </div>\n\n      <div>\n        <ion-label stacked>Message</ion-label>\n        <ion-textarea class="textarea" name="description"\n                      [formControl]="credentialsForm.controls[\'no_html\']"></ion-textarea>\n      </div>\n      <div>\n        <!--<ion-buttons stacked (click)="send()">Submit</ion-buttons>-->\n        <button ion-button style="background-color: #007aff" (click)="send()" [disabled]="!credentialsForm.valid">\n          Submit\n        </button>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\modal\modal.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__services_attendees_service__["a" /* AttendeesService */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__["a" /* EmailComposer */]])
-], SponsorsPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_global_vars__["a" /* GlobalVars */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* FormBuilder */]])
+], ModalPage);
 
-//# sourceMappingURL=sponsors.js.map
+//# sourceMappingURL=modal.js.map
 
 /***/ })
 

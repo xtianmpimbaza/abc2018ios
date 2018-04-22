@@ -27,12 +27,21 @@ import {AttendeeDetailsPage} from "../pages/attendee-details/attendee-details";
 // import {FCM} from "@ionic-native/fcm";
 import {EmailService} from "../services/email-service";
 import {GlobalVars} from "../providers/global-vars";
+import {PartnersDetailsPage} from "../pages/partners-details/partners-details";
+import {HomePageModule} from "../pages/home/home.module";
+import {BreakoutPageModule} from "../pages/breakout/breakout.module";
+import {ContactUsPageModule} from "../pages/contact-us/contact-us.module";
+import {EventPageModule} from "../pages/event/event.module";
+import {ExhibitorsPageModule} from "../pages/exhibitors/exhibitors.module";
+import {SchedulePageModule} from "../pages/schedule/schedule.module";
+import {SpeakersPageModule} from "../pages/speakers/speakers.module";
+import {SponsorsPageModule} from "../pages/sponsors/sponsors.module";
+import {ExhibitorsDetailsPageModule} from "../pages/exhibitors-details/exhibitors-details.module";
 
 @NgModule({
   declarations: [
     MyApp,
     WelcomePage,
-    AboutPage,
     PropertyListPage,
     PropertyDetailPage,
     AttendeeDetailsPage,
@@ -40,20 +49,30 @@ import {GlobalVars} from "../providers/global-vars";
     BrokerListPage,
     BrokerDetailPage,
     WelcomePage,
-    AboutPage,
+    PartnersDetailsPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    HomePageModule,
+    BreakoutPageModule,
+    ContactUsPageModule,
+    EventPageModule,
+    ExhibitorsPageModule,
+    SchedulePageModule,
+    SpeakersPageModule,
+    SponsorsPageModule,
+    ExhibitorsDetailsPageModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     WelcomePage,
-    AboutPage,
     PropertyListPage,
     PropertyDetailPage,
+    PartnersDetailsPage,
     AttendeeDetailsPage,
     FavoriteListPage,
     BrokerListPage,

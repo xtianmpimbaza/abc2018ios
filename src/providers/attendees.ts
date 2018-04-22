@@ -5,7 +5,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Technologies Africa",
       Position: "Director",
       Email: "kwame@btafrica.com",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 2,
@@ -13,7 +14,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Technologies Africa",
       Position: "Director",
       Email: "Solomon@africanblockchain.org",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 3,
@@ -21,7 +23,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Technologies Africa",
       Position: "Director",
       Email: "noah@btafrica.com",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 4,
@@ -29,7 +32,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Association of Uganda",
       Position: "Project Team",
       Email: "tina@africanblockchain.org",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 5,
@@ -37,7 +41,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Association of Uganda",
       Position: "Project Team",
       Email: "portia@africanblockchain.org",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 6,
@@ -45,7 +50,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Association of Uganda",
       Position: "Project Team",
       Email: "aaliyah@africanblockchain.org",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 7,
@@ -53,7 +59,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Association of Uganda",
       Position: "Project Team",
       Email: "linda@africanblockchain.org",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 8,
@@ -61,7 +68,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Association of Uganda",
       Position: "Project Team",
       Email: "markndoli01@gmail.com",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 9,
@@ -69,7 +77,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Technologies Africa",
       Position: "Developer",
       Email: "xtianm4@gmail.com",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "http://btafrica.com/wp-content/uploads/2017/11/logobchainafrica-1.png"
     },
     {
       id: 10,
@@ -77,7 +86,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Technologies Africa",
       Position: "Accountant",
       Email: "rwanjere@btafrica.com",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 11,
@@ -85,7 +95,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Technologies Africa",
       Position: "Lead Developer",
       Email: "david@btafrica.com",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     },
     {
       id: 12,
@@ -93,7 +104,8 @@ let attendees: Array<any> = [
       Company: "Blockchain Technologies Africa",
       Position: "Developer",
       Email: "rarinde@btafrica.com",
-      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png"
+      picture: "https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png",
+      logo: "https://africanblockchain.org/wp-content/uploads/2018/04/Blockchain-Technologies-Logo.jpg"
     }
   ];
 

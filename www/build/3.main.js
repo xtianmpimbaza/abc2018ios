@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 344:
+/***/ 355:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__partners__ = __webpack_require__(357);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PartnersPageModule", function() { return PartnersPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__eventmap__ = __webpack_require__(363);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventmapPageModule", function() { return EventmapPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PartnersPageModule = (function () {
-    function PartnersPageModule() {
+var EventmapPageModule = (function () {
+    function EventmapPageModule() {
     }
-    return PartnersPageModule;
+    return EventmapPageModule;
 }());
-PartnersPageModule = __decorate([
+EventmapPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__partners__["a" /* PartnersPage */],
+            __WEBPACK_IMPORTED_MODULE_2__eventmap__["a" /* EventmapPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__partners__["a" /* PartnersPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__eventmap__["a" /* EventmapPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__partners__["a" /* PartnersPage */]
+            __WEBPACK_IMPORTED_MODULE_2__eventmap__["a" /* EventmapPage */]
         ]
     })
-], PartnersPageModule);
+], EventmapPageModule);
 
-//# sourceMappingURL=partners.module.js.map
+//# sourceMappingURL=eventmap.module.js.map
 
 /***/ }),
 
-/***/ 357:
+/***/ 363:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartnersPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventmapPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,30 +60,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the PartnersPage page.
+ * Generated class for the EventmapPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var PartnersPage = (function () {
-    function PartnersPage(navCtrl, navParams) {
+var EventmapPage = (function () {
+    function EventmapPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    PartnersPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PartnersPage');
+    EventmapPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EventmapPage');
     };
-    return PartnersPage;
+    return EventmapPage;
 }());
-PartnersPage = __decorate([
+EventmapPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-partners',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\partners\partners.html"*/'<!--\n  Generated template for the PartnersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>partners</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\partners\partners.html"*/,
+        selector: 'page-eventmap',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\eventmap\eventmap.html"*/'<!--\n  Generated template for the EventmapPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>eventmap</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\eventmap\eventmap.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], PartnersPage);
+], EventmapPage);
 
-//# sourceMappingURL=partners.js.map
+//# sourceMappingURL=eventmap.js.map
 
 /***/ })
 
