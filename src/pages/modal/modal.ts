@@ -31,7 +31,7 @@ export class ModalPage {
       no_html: ['']
     });
     this.data.response = '';
-    this.ionViewDidLoad();
+    // this.ionViewDidLoad();
   }
 
   public sendContact() {
@@ -73,7 +73,7 @@ export class ModalPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log(this.navParams.get('message'));
-  }
+  // ionViewDidLoad() {
+  //   console.log(this.navParams.get('message'));
+  // }
 }

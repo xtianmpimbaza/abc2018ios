@@ -76,6 +76,10 @@ export class AttendeeDetailsPage {
     actionSheet.present();
   }
 
+  sendMail(){
+    this.openModal();
+  };
+
   emailPrompt() {
     let alert = this.alertCtrl.create({
       title: 'add Ingredient',

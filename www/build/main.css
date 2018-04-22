@@ -24395,6 +24395,10 @@ page-breakout .hall_name {
   color: white;
 }
 
+page-event .justify_p {
+  text-align: justify;
+}
+
 page-home ion-content ion-icon {
   font-size: 50px;
   color: #cc050f;

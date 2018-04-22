@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Team member details</ion-title>
+    <ion-title>Team Member Details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,12 +18,12 @@
   <ion-card>
 
     <ion-card-content>
-      <!--<img src="{{broker.picture}}"/>-->
+      <img src="{{attendee.picture}}"/>
       <h2>{{attendee.Name}}</h2>
       <h3>{{attendee.Position}}</h3>
     </ion-card-content>
 
-    <ion-list>
+    <ion-list (click)="sendMail()">
 
       <a ion-item>
         <ion-icon name="ios-globe" item-left></ion-icon>
@@ -36,7 +36,7 @@
         <h2>{{attendee.Position}}</h2>
       </a>
 
-      <a ion-item (click)="presentActionSheet()">
+      <a ion-item>
         <ion-icon name="mail" item-left></ion-icon>
         <p>Email</p>
         <h2>{{attendee.Email}}</h2>
