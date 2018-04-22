@@ -76,7 +76,7 @@ var BookingPage = (function () {
 BookingPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-booking',template:/*ion-inline-start:"F:\abconference\src\pages\booking\booking.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Booking</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <iframe  height="100%" width="100%" [src]="urlpaste()"></iframe>\n\n</ion-content>\n'/*ion-inline-end:"F:\abconference\src\pages\booking\booking.html"*/,
+        selector: 'page-booking',template:/*ion-inline-start:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\booking\booking.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Booking</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <iframe  height="100%" width="100%" [src]="urlpaste()"></iframe>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\christian\Dropbox\Project Folder\abconference\src\pages\booking\booking.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* DomSanitizer */]])
 ], BookingPage);
