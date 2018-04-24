@@ -28,6 +28,7 @@
     "@ionic-native/status-bar": "3.4.2",
     "@ionic/storage": "2.0.1",
     "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-email-composer": "^0.8.15",
     "cordova-plugin-firebase": "^1.0.0",
     "cordova-plugin-inappbrowser": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -71,7 +72,8 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-inappbrowser": {},
-      "cordova-plugin-firebase": {}
+      "cordova-plugin-firebase": {},
+      "cordova-plugin-email-composer": {}
     },
     "platforms": [
       "android"
