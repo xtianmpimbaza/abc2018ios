@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ViewController} from 'ionic-angular';
 
 import {Validators, FormBuilder, FormGroup} from "@angular/forms";
@@ -11,10 +11,14 @@ import {EmailComposer} from "@ionic-native/email-composer";
   selector: 'page-modal',
   templateUrl: 'modal.html',
 })
-export class ModalPage {
+export class ModalPage implements OnInit {
   receipient: string;
-  data:any = {};
+  data: any = {};
   credentialsForm: FormGroup;
+
+  @ViewChild('myInput') myInput: ElementRef;
+
+
 
   constructor(
     public navCtrl: NavController,
@@ -22,9 +26,10 @@ export class ModalPage {
     public viewCtrl: ViewController,
     private global: GlobalVars,
     private emailComposer: EmailComposer,
+    public element: ElementRef,
     private http: Http,
     private loadingCtrl: LoadingController,
-              private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder) {
     this.receipient = this.navParams.get('mail_receipiennt');
     this.credentialsForm = this.formBuilder.group({
       email_to: this.receipient,
@@ -35,6 +40,24 @@ export class ModalPage {
     this.data.response = '';
     // this.ionViewDidLoad();
   }
+
+  resize() {
+    var element = this.myInput['_elementRef'].nativeElement.getElementsByClassName("text-input")[0];
+    var scrollHeight = element.scrollHeight;
+    element.style.height = scrollHeight + 'px';
+    this.myInput['_elementRef'].nativeElement.style.height = (scrollHeight + 16) + 'px';
+  }
+
+  ngOnInit(): void {
+    // setTimeout(() => this.adjust(), 0);
+  }
+  //
+  // adjust(): void {
+  //   const textArea = this.myInput['_elementRef'].nativeElement.getElementsByTagName('textarea')[0];
+  //   textArea.style.overflow = 'hidden';
+  //   textArea.style.height = 'auto';
+  //   textArea.style.height = textArea.scrollHeight + 'px';
+  // }
 
   public sendContact() {
     console.log('Form submit');
@@ -47,8 +70,8 @@ export class ModalPage {
   public send() {
     // console.log(this.credentialsForm.value);
 
-    this.emailComposer.isAvailable().then((available: boolean) =>{
-      if(available) {
+    this.emailComposer.isAvailable().then((available: boolean) => {
+      if (available) {
         //Now we know we can send
         console.log("mail available");
       }
