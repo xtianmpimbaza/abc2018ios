@@ -1,8 +1,9 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ViewController} from 'ionic-angular';
 
-import {Validators, FormBuilder, FormGroup} from "@angular/forms";
-import {GlobalVars} from "../../providers/global-vars";
+import { FormBuilder, FormGroup} from "@angular/forms";
+// import {Validators, FormBuilder, FormGroup} from "@angular/forms";
+// import {GlobalVars} from "../../providers/global-vars";
 import {Http} from "@angular/http";
 import {EmailComposer} from "@ionic-native/email-composer";
 
@@ -24,7 +25,6 @@ export class ModalPage implements OnInit {
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private global: GlobalVars,
     private emailComposer: EmailComposer,
     public element: ElementRef,
     private http: Http,
@@ -125,7 +125,4 @@ export class ModalPage implements OnInit {
 
   }
 
-  // ionViewDidLoad() {
-  //   console.log(this.navParams.get('message'));
-  // }
 }

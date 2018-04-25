@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import {ScheduleOneService} from "../../providers/schedule-service";
 import {ScheduleTwoService} from "../../providers/scheduletwo-service";
+import {DatabaseProvider} from "../../providers/database/database";
 
-/**
- * Generated class for the SchedulePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 @IonicPage()
 @Component({
   selector: 'page-schedule',
@@ -17,12 +13,29 @@ import {ScheduleTwoService} from "../../providers/scheduletwo-service";
 export class SchedulePage {
 
   viewMode: string = "first";
-  firstSchedule: Array<any>;
+  firstSchedule = [];
   secondSchedule: Array<any>;
+  // developers = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, schOneService: ScheduleOneService, schTwoService: ScheduleTwoService) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              schOneService: ScheduleOneService,
+              schTwoService: ScheduleTwoService,
+              private databaseprovider: DatabaseProvider,
+              private platform: Platform) {
     schOneService.findAll().then(data => this.firstSchedule = data);
+    // this.databaseprovider.getDatabaseState().subscribe(rdy => {
+    //   if (rdy) {
+    //     this.loadDeveloperData();
+    //   }
+    // })
     schTwoService.findAll().then(data => this.secondSchedule = data);
+  }
+
+  loadDeveloperData() {
+    this.databaseprovider.getAllDevelopers().then(data => {
+      this.firstSchedule = data;
+    })
   }
 
 

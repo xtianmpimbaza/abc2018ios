@@ -1,22 +1,35 @@
 import {Component, ViewChild} from '@angular/core';
 import {AlertController, Nav, NavController} from "ionic-angular";
 import {HomePage} from "../home/home";
+import {GlobalVars} from "../../providers/global-vars";
+import {UserProvider} from "../../providers/user/user";
 
 @Component({
-    selector: 'page-welcome',
-    templateUrl: 'welcome.html'
+  selector: 'page-welcome',
+  templateUrl: 'welcome.html'
 })
 export class WelcomePage {
   @ViewChild(Nav) nav: Nav;
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController) {}
 
-  goToMyPage(page:string) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public global: GlobalVars, private user: UserProvider) {
+    this.checkIsLogged();
+  }
+
+  checkIsLogged() {
+    if (this.global.isLoged()) {
+      console.log('loged in');
+      // this.navCtrl.push('HomePage');
+      this.navCtrl.push('HomePage');
+    }
+  }
+
+  goToMyPage(page: string) {
     // go to the MyPage component
     this.navCtrl.push(page);
   }
 
-  setLogin(){
-
+  openRootPage(page) {
+    this.nav.setRoot(page);
   }
 
   presentPrompt() {
@@ -24,7 +37,7 @@ export class WelcomePage {
       title: 'Login',
       inputs: [
         {
-          name: 'Ticket',
+          name: 'ticket',
           placeholder: 'Ticket Number',
           type: 'Number'
         }
@@ -40,15 +53,14 @@ export class WelcomePage {
         {
           text: 'Login',
           handler: data => {
-            if (this.isLoggedIn()) {
-              // logged in!
-              return this.goToMyPage('HomePage');
-              // return this.nav.setRoot(HomePage);
-            } else {
-              // invalid login
-              // return this.goToMyPage('HomePage');
+
+            if (data.ticket.length <= 2) {
               return false;
+            } else {
+              this.user.saveUserLog(data);
+              return this.openRootPage(HomePage);
             }
+
           }
         }
       ]
@@ -56,7 +68,4 @@ export class WelcomePage {
     alert.present();
   }
 
-  isLoggedIn(){
-    return true;
-  }
 }

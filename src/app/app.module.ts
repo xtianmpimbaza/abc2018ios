@@ -37,6 +37,13 @@ import {SchedulePageModule} from "../pages/schedule/schedule.module";
 import {SpeakersPageModule} from "../pages/speakers/speakers.module";
 import {SponsorsPageModule} from "../pages/sponsors/sponsors.module";
 import {ExhibitorsDetailsPageModule} from "../pages/exhibitors-details/exhibitors-details.module";
+// import { DatabaseProvider } from '..\providers\database/database';
+
+import { IonicStorageModule } from '@ionic/storage';
+import { DatabaseProvider } from '../providers/database/database';
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { SQLite } from '@ionic-native/sqlite';
+import {UserProvider} from "../providers/user/user";
 
 @NgModule({
   declarations: [
@@ -64,6 +71,7 @@ import {ExhibitorsDetailsPageModule} from "../pages/exhibitors-details/exhibitor
     SpeakersPageModule,
     SponsorsPageModule,
     ExhibitorsDetailsPageModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -92,7 +100,11 @@ import {ExhibitorsDetailsPageModule} from "../pages/exhibitors-details/exhibitor
     AttendeesService,
     EmailService,
     EmailComposer,
+    UserProvider,
     GlobalVars,
+    DatabaseProvider,
+    SQLitePorter,
+    SQLite,
     // FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
