@@ -48,7 +48,7 @@ ModalPageModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_email_composer__ = __webpack_require__(84);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -121,7 +121,7 @@ var ModalPage = (function () {
         var email = {
             app: 'gmail',
             to: this.credentialsForm.value.email_to,
-            subject: 'Email from African Blockchain conference Attendee',
+            subject: 'Request to Blockchain conference Attendee',
             body: this.credentialsForm.value.no_html,
             isHtml: true
         };

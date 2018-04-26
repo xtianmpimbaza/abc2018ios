@@ -80,7 +80,7 @@ export class ModalPage implements OnInit {
     let email = {
       app: 'gmail',
       to: this.credentialsForm.value.email_to,
-      subject: 'Email from African Blockchain conference Attendee',
+      subject: 'Request to Blockchain conference Attendee',
       body: this.credentialsForm.value.no_html,
       isHtml: true
     };

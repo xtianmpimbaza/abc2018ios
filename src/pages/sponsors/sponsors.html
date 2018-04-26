@@ -27,9 +27,9 @@
 <ion-content>
   <ion-list>
     <button ion-item *ngFor="let speaker of attendees" (click)="openSpeakerDetail(speaker)">
-      <ion-avatar item-left>
-      <img src="{{speaker.picture}}"/>
-      </ion-avatar>
+      <h2 item-left>
+      <!--<img src="{{speaker.picture}}"/>-->{{speaker.id}}
+      </h2>
       <h2>{{speaker.Name}}</h2>
       <p>{{speaker.Company}}</p>
     </button>
