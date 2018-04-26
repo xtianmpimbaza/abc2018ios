@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {AlertController, Nav, NavController} from "ionic-angular";
-import {HomePage} from "../home/home";
+// import {HomePage} from "../home/home";
 import {GlobalVars} from "../../providers/global-vars";
 import {UserProvider} from "../../providers/user/user";
 
@@ -12,16 +12,9 @@ export class WelcomePage {
   @ViewChild(Nav) nav: Nav;
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, public global: GlobalVars, private user: UserProvider) {
-    this.checkIsLogged();
+    // this.checkIsLogged();
   }
 
-  checkIsLogged() {
-    if (this.global.isLoged()) {
-      console.log('loged in');
-      // this.navCtrl.push('HomePage');
-      this.navCtrl.push('HomePage');
-    }
-  }
 
   goToMyPage(page: string) {
     // go to the MyPage component
@@ -57,8 +50,8 @@ export class WelcomePage {
             if (data.ticket.length <= 2) {
               return false;
             } else {
-              this.user.saveUserLog(data);
-              return this.openRootPage(HomePage);
+              this.user.saveUserLog(data.ticket);
+              return this.goToMyPage('HomePage');
             }
 
           }

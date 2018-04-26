@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 // import {AttendeeDetailsPage} from "../attendee-details/attendee-details";
-import {EmailComposer} from "@ionic-native/email-composer";
+// import {EmailComposer} from "@ionic-native/email-composer";
 import {AttendeesService} from "../../services/attendees-service";
 import {ExhibitorsDetailsPage} from "../exhibitors-details/exhibitors-details";
 

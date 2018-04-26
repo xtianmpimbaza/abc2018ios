@@ -82,7 +82,11 @@ export class MyApp {
   }
 
   // isLogedIn(){
-  //     return true;
+  //   this.user.isLoggedIn();
+  // }
+
+  // logout(){
+  //   this.user.resetLocalStorage();
   // }
 
   initializeApp() {
