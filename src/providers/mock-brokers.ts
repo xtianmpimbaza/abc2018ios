@@ -42,15 +42,15 @@ let brokers: Array<any> = [
   {
     id: 6,
     name: "Changpeng Zhao",
-    title: "CEO, BitPesa",
+    title: "CEO, Binance",
     email: "info@africanblockchain.org",
-    country: "Nairobi",
+    country: "China",
     picture: "https://africanblockchain.org/wp-content/uploads/2018/04/CZ-320x320.jpg"
   },
   {
     id: 7,
     name: "Elizabeth Rossiello",
-    title: "CEO, Binance",
+    title: "CEO, Bitpesa",
     email: "info@africanblockchain.org",
     country: "Kenya",
     picture: "https://africanblockchain.org/wp-content/uploads/2018/04/Elizabeth.jpg"

@@ -3,6 +3,8 @@ import {AlertController, Nav, NavController} from "ionic-angular";
 // import {HomePage} from "../home/home";
 import {GlobalVars} from "../../providers/global-vars";
 import {UserProvider} from "../../providers/user/user";
+// import {MyApp} from "../../app/app.component";
+import {HomePage} from "../home/home";
 
 @Component({
   selector: 'page-welcome',
@@ -13,6 +15,16 @@ export class WelcomePage {
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, public global: GlobalVars, private user: UserProvider) {
     // this.checkIsLogged();
+    // this.isLoged();
+  }
+
+  isLoged(){
+    // if (this.user.isLoggedIn()){
+    //   console.log('logged in')
+      this.nav.setRoot(HomePage);
+    // }else {
+    //   console.log('logged out')
+    // }
   }
 
 
@@ -21,9 +33,6 @@ export class WelcomePage {
     this.navCtrl.push(page);
   }
 
-  openRootPage(page) {
-    this.nav.setRoot(page);
-  }
 
   presentPrompt() {
     let alert = this.alertCtrl.create({

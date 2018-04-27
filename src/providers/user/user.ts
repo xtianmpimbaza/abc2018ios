@@ -11,45 +11,51 @@ const STORAGE_KEY = 'userlog';
 @Injectable()
 export class UserProvider {
 
+  ticket = 'log_status';
+
   constructor(public http: Http, public storage: Storage) {
     // this.local = new Storage(LocalStorage);
   }
 
   isLoggedIn() {
-    return this.getLoginTicket().then(result => {
-          // console.log(this.storage.get(STORAGE_KEY).toString());
-      console.log(result);
-      return result && result[1] >= 1;
-      // return false;
+    this.storage.get('login_key').then(value => {
+      console.log('Loged in with ticket : ' + value);
+
+      return ''+value;
+      // console.log('inside : '+this.ticket);
+     // return this.ticket;
     });
-    // return false;
+    // console.log(this.ticket);
+    // if (this.ticket != 'log_status') {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    // return this.status;
 
   }
 
   setRootPage() {
-    if (this.isLoggedIn()){
+    console.log(this.isLoggedIn());
+
+    if (this.isLoggedIn() != undefined) {
       return HomePage;
     } else {
       return WelcomePage;
     }
   }
 
-  saveUserLog(ticket) {
-    return this.getLoginTicket().then(result => {
-      // if (result) {
-      //   // result.push(ticket);
-      //   return this.storage.set(STORAGE_KEY, ticket);
-      // } else {
-      return this.storage.set(STORAGE_KEY, [ticket]);
-      // }
-    });
+  saveUserLog(ticket: string) {
+    // return this.getLoginTicket().then(result => {
+    return this.storage.set('login_key', ticket);
+    // });
   }
 
   getLoginTicket() {
     return this.storage.get(STORAGE_KEY);
   }
 
-  resetLocalStorage(){
+  resetLocalStorage() {
     this.storage.clear();
   }
 

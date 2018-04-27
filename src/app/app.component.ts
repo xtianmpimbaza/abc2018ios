@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
+import {Storage} from '@ionic/storage';
 
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
@@ -13,7 +14,6 @@ import {SchedulePage} from "../pages/schedule/schedule";
 import {BreakoutPage} from "../pages/breakout/breakout";
 import {HomePage} from "../pages/home/home";
 import {ContactUsPage} from "../pages/contact-us/contact-us";
-// import {GlobalVars} from "../providers/global-vars";
 import {UserProvider} from "../providers/user/user";
 
 // import {FCM} from "@ionic-native/fcm";
@@ -30,48 +30,22 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = this.user.setRootPage();
-  // rootPage: any = WelcomePage;
   appMenuItems: Array<MenuItem>;
-
-  accountMenuItems: Array<MenuItem>;
 
   helpMenuItems: Array<MenuItem>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private user: UserProvider) {
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              private user: UserProvider, storage: Storage) {
     // this.fcm.getToken().then(token => {
     //   // Your best bet is to here store the token on the user's profile on the
     //   // Firebase database, so that when you want to send notifications to this
     //   // specific user you can do it from Cloud Functions.
     //
     // });
-    this.initializeApp();
 
-    if (this.user.isLoggedIn()) {
-      this.appMenuItems = [
-        {title: 'Home', component: HomePage, icon: 'home'},
-        {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
-        {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
-        {title: 'Exhibitors', component: ExhibitorsPage, icon: 'ios-contact'},
-        {title: 'Attendees', component: SponsorsPage, icon: 'ios-contacts'},
-        {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
-        {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
-      ];
-    } else {
-      this.appMenuItems = [
-        {title: 'Home', component: WelcomePage, icon: 'home'},
-        {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
-        {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
-        {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
-        {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
-      ];
-    }
-
-
-    this.accountMenuItems = [
-      {title: 'Book a seat', component: WelcomePage, icon: 'ios-contact'},
-      // {title: 'Login', component: LoginPage, icon: 'md-log-in'}
-    ];
+    // this.initializeApp();
 
     this.helpMenuItems = [
       // {title: 'Location', component: EventmapPage, icon: 'ios-map'},
@@ -79,15 +53,32 @@ export class MyApp {
       {title: 'Contact us', component: ContactUsPage, icon: 'mail'}
     ];
 
+
+    storage.get('login_key').then(logged => {
+      if (logged) {
+        this.appMenuItems = [
+          {title: 'Home', component: HomePage, icon: 'home'},
+          {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
+          {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
+          {title: 'Exhibitors', component: ExhibitorsPage, icon: 'ios-contact'},
+          {title: 'Attendees', component: SponsorsPage, icon: 'ios-contacts'},
+          {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
+          {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
+        ];
+        this.nav.setRoot(HomePage);
+      } else {
+        this.appMenuItems = [
+          {title: 'Home', component: WelcomePage, icon: 'home'},
+          {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
+          {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
+          {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
+          {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
+        ];
+        this.nav.setRoot(WelcomePage);
+      }
+    });
   }
 
-  // isLogedIn(){
-  //   this.user.isLoggedIn();
-  // }
-
-  // logout(){
-  //   this.user.resetLocalStorage();
-  // }
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -104,4 +95,5 @@ export class MyApp {
     this.nav.setRoot(page.component);
     // this.navCtrl.push(page.component);
   }
+
 }

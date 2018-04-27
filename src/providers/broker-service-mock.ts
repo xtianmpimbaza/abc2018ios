@@ -7,7 +7,9 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class BrokerService {
-  url = 'https://africanblockchain.org/wp-json/wp/v2/speaker/?status=publish';
+  url = 'https://africanblockchain.org//wp-json/wp/v2/speaker/?_embed&&status=publish';
+  // url = 'https://africanblockchain.org//wp-json/wp/v2/speaker/?_embed&&status=publish';
+  // url = 'https://africanblockchain.org/wp-json/wp/v2/speaker/?status=publish';
   // getApiUrl : string = "https://jsonplaceholder.typicode.com/posts";
   constructor(private http: Http){
 
