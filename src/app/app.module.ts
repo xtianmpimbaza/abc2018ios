@@ -23,7 +23,6 @@ import {ScheduleTwoService} from "../providers/scheduletwo-service";
 import {BreakoutService} from "../services/breakout-service";
 import {EmailComposer} from "@ionic-native/email-composer";
 import {AttendeesService} from "../services/attendees-service";
-import {AttendeeDetailsPage} from "../pages/attendee-details/attendee-details";
 // import {FCM} from "@ionic-native/fcm";
 import {EmailService} from "../services/email-service";
 import {GlobalVars} from "../providers/global-vars";
@@ -44,6 +43,9 @@ import { DatabaseProvider } from '../providers/database/database';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { SQLite } from '@ionic-native/sqlite';
 import {UserProvider} from "../providers/user/user";
+import {ListPage} from "../pages/list/list";
+import {AttendeeDetailsPageModule} from "../pages/attendee-details/attendee-details.module";
+import {PartnersPageModule} from "../pages/partners/partners.module";
 
 @NgModule({
   declarations: [
@@ -51,8 +53,8 @@ import {UserProvider} from "../providers/user/user";
     WelcomePage,
     PropertyListPage,
     PropertyDetailPage,
-    AttendeeDetailsPage,
     FavoriteListPage,
+    ListPage,
     BrokerListPage,
     BrokerDetailPage,
     WelcomePage,
@@ -69,6 +71,8 @@ import {UserProvider} from "../providers/user/user";
     ExhibitorsPageModule,
     SchedulePageModule,
     SpeakersPageModule,
+    PartnersPageModule,
+    AttendeeDetailsPageModule,
     SponsorsPageModule,
     ExhibitorsDetailsPageModule,
     IonicStorageModule.forRoot(),
@@ -81,11 +85,11 @@ import {UserProvider} from "../providers/user/user";
     PropertyListPage,
     PropertyDetailPage,
     PartnersDetailsPage,
-    AttendeeDetailsPage,
     FavoriteListPage,
     BrokerListPage,
     BrokerDetailPage,
     WelcomePage,
+    ListPage,
     AboutPage
   ],
   providers: [

@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ContactUsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -15,29 +9,40 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
   <ion-list>
-    <button ion-item text-wrap>
-      <h2>Phone:</h2>
-      <p><a href="tel:+256773212732">+256 (0) 773 212 732</a> <br> <a href="tel:+256706087711">+256 (0) 706 087 711</a></p>
-    </button>
-  </ion-list>
-  <ion-list>
-    <button ion-item text-wrap>
-      <h2>Email:</h2>
-      <p>info@africanblockchain.org</p>
-    </button>
+    <a href="tel:{{+256773212732}}" ion-item>
+    <ion-icon name="call" item-left></ion-icon>
+    <p>Call Office</p>
+    <h2>+256 (0) 773 212 732</h2>
+    </a>
   </ion-list>
 
   <ion-list>
-    <h2>Address</h2>
-    <p>P.O.Box 27108, Kampala
-      6th Floor, Block B,
-      Nakawa Business Park
-      Kampala, Uganda
-      Get Directions here</p>
-
+    <a href="tel:{{+256706087711}}" ion-item>
+    <ion-icon name="call" item-left></ion-icon>
+    <p>Call Mobile</p>
+    <h2>+256 (0) 706 087 711</h2>
+    </a>
   </ion-list>
+
+  <ion-list>
+    <a href="mailto:{{'info@africanblockchain.org'}}" ion-item>
+      <ion-icon name="mail" item-left></ion-icon>
+      <p>Email</p>
+      <h2>info@africanblockchain.org</h2>
+    </a>
+  </ion-list>
+<ion-list>
+    <a ion-item>
+      <ion-icon name="ios-map" item-left></ion-icon>
+      <p>Adress</p>
+      <h2 text-wrap="">P.O.Box 27108, Kampala
+        6th Floor, Block B,
+        Nakawa Business Park
+        Kampala, Uganda
+        Get Directions here</h2>
+    </a>
+  </ion-list>
+
 </ion-content>

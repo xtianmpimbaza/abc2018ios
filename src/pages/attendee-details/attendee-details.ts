@@ -17,7 +17,6 @@ import {EmailComposer} from '@ionic-native/email-composer';
 })
 export class AttendeeDetailsPage {
 
-  // broker: any;
   attendee: any;
 
   constructor(

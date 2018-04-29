@@ -77,7 +77,7 @@ export class DatabaseProvider {
   }
 
   getAllDevelopers() {
-    return this.database.executeSql("SELECT * FROM Schedule", []).then((data) => {
+    return this.database.executeSql("SELECT * FROM Schjedule", []).then((data) => {
       let developers = [];
       if (data.rows.length > 0) {
         for (var i = 0; i < data.rows.length; i++) {

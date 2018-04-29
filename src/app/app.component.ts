@@ -45,7 +45,7 @@ export class MyApp {
     //
     // });
 
-    // this.initializeApp();
+    this.initializeApp();
 
     this.helpMenuItems = [
       // {title: 'Location', component: EventmapPage, icon: 'ios-map'},

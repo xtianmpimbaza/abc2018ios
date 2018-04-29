@@ -1,9 +1,7 @@
-import {Component, ViewChild} from '@angular/core';
-import {AlertController, Nav, NavController} from "ionic-angular";
-// import {HomePage} from "../home/home";
+import {Component} from '@angular/core';
+import {AlertController, NavController} from "ionic-angular";
 import {GlobalVars} from "../../providers/global-vars";
 import {UserProvider} from "../../providers/user/user";
-// import {MyApp} from "../../app/app.component";
 import {HomePage} from "../home/home";
 
 @Component({
@@ -11,28 +9,14 @@ import {HomePage} from "../home/home";
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
-  @ViewChild(Nav) nav: Nav;
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, public global: GlobalVars, private user: UserProvider) {
-    // this.checkIsLogged();
-    // this.isLoged();
-  }
 
-  isLoged(){
-    // if (this.user.isLoggedIn()){
-    //   console.log('logged in')
-      this.nav.setRoot(HomePage);
-    // }else {
-    //   console.log('logged out')
-    // }
   }
-
 
   goToMyPage(page: string) {
-    // go to the MyPage component
     this.navCtrl.push(page);
   }
-
 
   presentPrompt() {
     let alert = this.alertCtrl.create({
@@ -60,7 +44,7 @@ export class WelcomePage {
               return false;
             } else {
               this.user.saveUserLog(data.ticket);
-              return this.goToMyPage('HomePage');
+              this.navCtrl.setRoot(HomePage);
             }
 
           }
