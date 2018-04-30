@@ -3,6 +3,7 @@ import {AlertController, NavController} from "ionic-angular";
 import {GlobalVars} from "../../providers/global-vars";
 import {UserProvider} from "../../providers/user/user";
 import {HomePage} from "../home/home";
+import {MyApp} from "../../app/app.component";
 
 @Component({
   selector: 'page-welcome',
@@ -44,7 +45,8 @@ export class WelcomePage {
               return false;
             } else {
               this.user.saveUserLog(data.ticket);
-              this.navCtrl.setRoot(HomePage);
+              this.navCtrl.setRoot(MyApp);
+              // this.navCtrl.setRoot(HomePage);
             }
 
           }

@@ -38,17 +38,10 @@ export class MyApp {
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
               private user: UserProvider, storage: Storage) {
-    // this.fcm.getToken().then(token => {
-    //   // Your best bet is to here store the token on the user's profile on the
-    //   // Firebase database, so that when you want to send notifications to this
-    //   // specific user you can do it from Cloud Functions.
-    //
-    // });
 
     this.initializeApp();
 
     this.helpMenuItems = [
-      // {title: 'Location', component: EventmapPage, icon: 'ios-map'},
       {title: 'About', component: AboutPage, icon: 'information-circle'},
       {title: 'Contact us', component: ContactUsPage, icon: 'mail'}
     ];

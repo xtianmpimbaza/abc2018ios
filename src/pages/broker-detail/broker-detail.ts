@@ -12,9 +12,12 @@ export class BrokerDetailPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public service: BrokerService) {
         this.broker = this.navParams.data;
-        service.findById(this.broker.id).then(
-            broker => this.broker = broker
-        );
+        // service.findById(this.broker.id).then(
+        //     broker => this.broker = broker
+        // ).catch(error => {
+        //   // alert(JSON.stringify(error))
+        //   console.log(error);
+        // });
     }
 
 }

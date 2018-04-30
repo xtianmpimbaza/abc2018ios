@@ -22,8 +22,6 @@ export class UserProvider {
       console.log('Loged in with ticket : ' + value);
 
       return ''+value;
-      // console.log('inside : '+this.ticket);
-     // return this.ticket;
     });
     // console.log(this.ticket);
     // if (this.ticket != 'log_status') {

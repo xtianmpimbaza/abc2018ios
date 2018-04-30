@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import {Component, OnInit} from '@angular/core';
+import {IonicPage, NavController} from 'ionic-angular';
 import {BrokerDetailPage} from "../broker-detail/broker-detail";
 import {BrokerService} from "../../providers/broker-service-mock";
+import {SpeakersProvider} from "../../providers/speakers/speakers";
 
 
 @IonicPage()
@@ -9,30 +10,44 @@ import {BrokerService} from "../../providers/broker-service-mock";
   selector: 'page-speakers',
   templateUrl: 'speakers.html',
 })
-export class SpeakersPage {
+export class SpeakersPage implements OnInit {
 
-  speakers: Array<any>;
+  speakers: any = [];
+  loaded: boolean;
+  checkStatus: boolean = true;
 
-  constructor(public navCtrl: NavController, public service: BrokerService) {
-    // service.findAll().then(data => this.speakers = data);
-    // service.getSpeakers();
+  constructor(public navCtrl: NavController, public service: BrokerService, public speakersProvider: SpeakersProvider) {
+    this.loaded = false;
+    this.getSpeakers();
     this.getPosts();
+  }
+
+  ngOnInit(): void {
+    // this.getSpeakers();
+    // this.getPosts();
+  }
+
+  getSpeakers(){
+    this.speakersProvider.getAllSpeakers().then(data => {
+      this.speakers = data
+      this.checkStatus = false;
+    }).catch(error => alert(JSON.stringify(error)));
   }
 
   openSpeakerDetail(broker) {
     this.navCtrl.push(BrokerDetailPage, broker);
   }
 
-  getPosts(){
+  getPosts() {
     this.service.getSpeakers().subscribe(data => {
-      console.log('data from local 4k')
-      this.speakers = data;
-      console.log(data);
-    },
+        this.speakersProvider.saveSpeakers(data);
+        this.speakers = data;
+      // this.getSpeakers();
+
+      },
       err => {
         console.log(err);
       });
-
   }
 
 }

@@ -30,9 +30,6 @@ export class SponsorsPage {
     this.service.findByName(this.searchKey)
       .then(data => {
         this.attendees = data;
-        // if (this.viewMode === "map") {
-        //   this.showMarkers();
-        // }
       })
       .catch(error => alert(JSON.stringify(error)));
   }
