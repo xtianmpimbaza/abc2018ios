@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import {Storage} from '@ionic/storage';
 import {HomePage} from "../../pages/home/home";
 import {WelcomePage} from "../../pages/welcome/welcome";
+import {Events} from "ionic-angular";
 //import {isEmpty} from "rxjs/operator/isEmpty";
 
 const STORAGE_KEY = 'userlog';
@@ -13,7 +14,7 @@ export class UserProvider {
 
   ticket = 'log_status';
 
-  constructor(public http: Http, public storage: Storage) {
+  constructor(public http: Http, public storage: Storage, public events: Events) {
     // this.local = new Storage(LocalStorage);
   }
 
@@ -43,11 +44,20 @@ export class UserProvider {
     }
   }
 
-  saveUserLog(ticket: string) {
+  saveUserLog(ticket: string):void {
     // return this.getLoginTicket().then(result => {
-    return this.storage.set('login_key', ticket);
+
+    this.storage.set('login_key', ticket);
+    this.events.publish('user:login');
+
     // });
   }
+
+  // login(username: string): void {
+  //   this.storage.set(this.HAS_LOGGED_IN, true);
+  //   this.setUsername(username);
+  //   this.events.publish('user:login');
+  // };
 
   getLoginTicket() {
     return this.storage.get(STORAGE_KEY);
@@ -56,6 +66,8 @@ export class UserProvider {
   resetLocalStorage() {
     this.storage.clear();
   }
-
+  setUsername(username: string): void {
+    this.storage.set('username', username);
+  };
 
 }

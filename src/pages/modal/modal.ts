@@ -122,7 +122,7 @@ export class ModalPage implements OnInit {
     //         loader.dismiss();
     //       });
     // });
-
+    this.closeModal();
   }
 
 }

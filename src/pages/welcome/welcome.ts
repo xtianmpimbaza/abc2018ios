@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {AlertController, NavController} from "ionic-angular";
+import {AlertController, Events, NavController} from "ionic-angular";
 import {GlobalVars} from "../../providers/global-vars";
 import {UserProvider} from "../../providers/user/user";
 import {HomePage} from "../home/home";
-import {MyApp} from "../../app/app.component";
+
 
 @Component({
   selector: 'page-welcome',
@@ -11,7 +11,12 @@ import {MyApp} from "../../app/app.component";
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public global: GlobalVars, private user: UserProvider) {
+  constructor(
+    public navCtrl: NavController,
+    private alertCtrl: AlertController,
+    public global: GlobalVars,
+    private user: UserProvider,
+    public events: Events) {
 
   }
 
@@ -45,8 +50,7 @@ export class WelcomePage {
               return false;
             } else {
               this.user.saveUserLog(data.ticket);
-              this.navCtrl.setRoot(MyApp);
-              // this.navCtrl.setRoot(HomePage);
+              this.navCtrl.setRoot(HomePage);
             }
 
           }
@@ -55,5 +59,6 @@ export class WelcomePage {
     });
     alert.present();
   }
+
 
 }
