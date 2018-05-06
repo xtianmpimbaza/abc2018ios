@@ -30,9 +30,9 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // appMenuItems: Array<MenuItem>;
-
   helpMenuItems: Array<MenuItem>;
+
+  rootPage: any;
 
 
   loggedInPages: MenuItem[] = [
@@ -51,8 +51,6 @@ export class MyApp {
     {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
     {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
   ];
-  rootPage: any;
-
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
@@ -62,89 +60,40 @@ export class MyApp {
               public menu: MenuController,
               public events: Events) {
 
-    this.initializeApp();
-
+    // this.initializeApp();
+    this.hasLoggedIn().then((hasLoggedIn) => {
+      this.enableMenu(hasLoggedIn === true);
+    });
+    this.enableMenu(true);
+    this.listenToLoginEvents();
 
     this.helpMenuItems = [
       {title: 'About', component: AboutPage, icon: 'information-circle'},
       {title: 'Contact us', component: ContactUsPage, icon: 'mail'}
     ];
 
-
-    // this.storage.get('login_key').then(logged => {
-    //   if (logged) {
-    //     // this.appMenuItems = [];
-    //     console.log(this.appMenuItems);
-    //     this.appMenuItems = [
-    //       {title: 'Home', component: HomePage, icon: 'home'},
-    //       {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
-    //       {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
-    //       {title: 'Exhibitors', component: ExhibitorsPage, icon: 'ios-contact'},
-    //       {title: 'Attendees', component: SponsorsPage, icon: 'ios-contacts'},
-    //       {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
-    //       {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
-    //     ];
-    //   } else {
-    //     this.appMenuItems = [
-    //       {title: 'Home', component: WelcomePage, icon: 'home'},
-    //       {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
-    //       {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
-    //       {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
-    //       {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
-    //     ];
-    //     console.log(this.appMenuItems);
-    //   }
-    // });
-    // console.log(this.appMenuItems);
-
-    // events.subscribe('user:created', (user, time) => {
-    //   // user and time are the same arguments passed in `events.publish(user, time)`
-    //   console.log('Welcome', user, 'at', time);
-    //   if (this.user)
-    //   this.appMenuItems = [
-    //     // appMenuItems: Array<MenuItem> = [
-    //     {title: 'Home', component: HomePage, icon: 'home'},
-    //     {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
-    //     {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
-    //     {title: 'Exhibitors', component: ExhibitorsPage, icon: 'ios-contact'},
-    //     {title: 'Attendees', component: SponsorsPage, icon: 'ios-contacts'},
-    //     {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
-    //     {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
-    //   ];
-    //   this.nav.setRoot(HomePage);
-    // });
-
-
     storage.get('login_key').then((logged) => {
       if (logged) {
-        // this.nav.setRoot(HomePage);
+        this.enableMenu(true);
         this.rootPage = HomePage;
+        // this.nav.setRoot(HomePage);
       } else {
+        this.enableMenu(false);
         // this.nav.setRoot(WelcomePage);
         this.rootPage = WelcomePage;
       }
+      this.platformReady()
     });
 
-    this.hasLoggedIn().then((hasLoggedIn) => {
-      this.enableMenu(hasLoggedIn === true);
-    });
-    this.enableMenu(true);
 
-    this.listenToLoginEvents();
   }
 
   listenToLoginEvents() {
-    this.events.subscribe('user:login', () => {
+    this.events.subscribe('user:login', (ticket) => {
+      console.log("Ticket loged no: ", ticket);
       this.enableMenu(true);
     });
-
-    // this.events.subscribe('user:signup', () => {
-    //   this.enableMenu(true);
-    // });
-
-    this.events.subscribe('user:logout', () => {
-      this.enableMenu(false);
-    });
+    this.enableMenu(true);
   }
 
   enableMenu(loggedIn: boolean) {
@@ -154,17 +103,24 @@ export class MyApp {
 
   hasLoggedIn(): Promise<boolean> {
     return this.storage.get('login_key').then((value) => {
+      console.log('Is reached');
       return value === true;
     });
   };
 
-
-  initializeApp() {
+  platformReady() {
+    // Call any initial plugins when ready
     this.platform.ready().then(() => {
-      this.statusBar.styleLightContent();
       this.splashScreen.hide();
     });
   }
+
+  // initializeApp() {
+  //   this.platform.ready().then(() => {
+  //     this.statusBar.styleLightContent();
+  //     this.splashScreen.hide();
+  //   });
+  // }
 
   openPage(page) {
     this.nav.setRoot(page.component);

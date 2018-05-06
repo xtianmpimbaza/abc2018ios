@@ -3,6 +3,7 @@ import {AlertController, Events, NavController} from "ionic-angular";
 import {GlobalVars} from "../../providers/global-vars";
 import {UserProvider} from "../../providers/user/user";
 import {HomePage} from "../home/home";
+import {Storage} from "@ionic/storage";
 
 
 @Component({
@@ -16,7 +17,14 @@ export class WelcomePage {
     private alertCtrl: AlertController,
     public global: GlobalVars,
     private user: UserProvider,
+    private storage: Storage,
     public events: Events) {
+
+    storage.get('login_key').then((logged) => {
+      if (logged) {
+        this.navCtrl.setRoot(HomePage);
+      }
+    });
 
   }
 

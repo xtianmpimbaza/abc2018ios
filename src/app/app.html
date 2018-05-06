@@ -1,4 +1,4 @@
-<ion-menu id="loggedOutMenu" [content]="content" persistent="true">
+<ion-menu id="loggedInMenu" [content]="content" persistent="true">
 
   <ion-content>
     <img src="assets/img/conference-logo.png" class="menu-logo"/>
@@ -7,7 +7,7 @@
       <ion-list-header>
         Event
       </ion-list-header>
-      <button menuClose ion-item *ngFor="let menuItem of loggedOutPages" (click)="openPage(menuItem)">
+      <button menuClose ion-item *ngFor="let menuItem of loggedInPages" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon"></ion-icon>
         {{menuItem.title}}
       </button>
@@ -25,8 +25,7 @@
   </ion-content>
 
 </ion-menu>
-
-<ion-menu id="loggedInMenu" [content]="content" persistent="true">
+<ion-menu id="loggedOutMenu" [content]="content" persistent="true">
 
   <ion-content>
     <img src="assets/img/conference-logo.png" class="menu-logo"/>
@@ -35,7 +34,7 @@
       <ion-list-header>
         Event
       </ion-list-header>
-      <button menuClose ion-item *ngFor="let menuItem of loggedInPages" (click)="openPage(menuItem)">
+      <button menuClose ion-item *ngFor="let menuItem of loggedOutPages" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon"></ion-icon>
         {{menuItem.title}}
       </button>

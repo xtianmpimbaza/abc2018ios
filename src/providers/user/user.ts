@@ -34,21 +34,21 @@ export class UserProvider {
 
   }
 
-  setRootPage() {
-    console.log(this.isLoggedIn());
-
-    if (this.isLoggedIn() != undefined) {
-      return HomePage;
-    } else {
-      return WelcomePage;
-    }
-  }
+  // setRootPage() {
+  //   console.log(this.isLoggedIn());
+  //
+  //   if (this.isLoggedIn() != undefined) {
+  //     return HomePage;
+  //   } else {
+  //     return WelcomePage;
+  //   }
+  // }
 
   saveUserLog(ticket: string):void {
     // return this.getLoginTicket().then(result => {
 
     this.storage.set('login_key', ticket);
-    this.events.publish('user:login');
+    this.events.publish('user:login', ticket);
 
     // });
   }
