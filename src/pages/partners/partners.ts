@@ -15,6 +15,7 @@ import {BrokerService} from "../../providers/broker-service-mock";
 export class PartnersPage {
 
   speakers: any = [];
+  speakers_backup: any = [];
   loaded: boolean;
   checkStatus: boolean = true;
   searchKey: string = "";
@@ -32,7 +33,8 @@ export class PartnersPage {
 
   getSpeakers() {
     this.speakersProvider.getAllSponsors().then(data => {
-      this.speakers = data
+      this.speakers = data;
+      this.speakers_backup = data;
       this.checkStatus = false;
     }).catch(error => alert(JSON.stringify(error)));
   }
@@ -45,8 +47,8 @@ export class PartnersPage {
   getItems(ev) {
     // Reset items back to all of the items
     // this.initializeItems();
-    // this.getSpeakers();
-    // set val to the value of the ev target
+    this.speakers = this.speakers_backup;
+
     var val = ev.target.value;
 
     // if the value is an empty string don't filter the items
@@ -56,9 +58,15 @@ export class PartnersPage {
       })
     }
   }
-
   onCancel(event) {
-    this.getSpeakers()
+    // this.findAll();
+    console.log("cleaning search");
+    // this.service.getAll().then(data => this.attendees = data);
+    // this.search = false;
+    this.speakersProvider.getAllSponsors().then(data => {
+      this.speakers = data
+      this.checkStatus = false;
+    }).catch(error => alert(JSON.stringify(error)));
   }
 
   getPosts() {

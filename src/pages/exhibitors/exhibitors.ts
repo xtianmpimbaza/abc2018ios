@@ -40,7 +40,8 @@ export class ExhibitorsPage {
 
   onCancel(event) {
     // this.findAll();
-    this.service.getAll().then(data => this.attendees = data);
+    console.log("cleaning search");
+    // this.service.getAll().then(data => this.attendees = data);
     // this.search = false;
   }
 

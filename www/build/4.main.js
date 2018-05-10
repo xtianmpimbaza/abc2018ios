@@ -1,2 +1,94 @@
-webpackJsonp([4],{413:function(e,t,_){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=_(0),l=_(435),o=_(8),i=_(23),a=_(41),u=_(45),s=_(42),h=_(125),d=_(126),r=_(88),M=_(127),c=_(128),w=_(86),p=_(129),g=_(130),b=_(131),f=_(132),m=_(133),y=_(134),v=_(135),S=_(136),I=_(137),P=_(61),k=_(138),B=_(139),T=_(87),L=_(140),N=_(141),O=_(142),A=_(143),C=_(144),F=_(145),R=_(146),z=_(147),j=_(148),D=_(149),J=_(150),x=_(151),E=_(152),G=_(153),H=_(154),K=_(155),V=_(156),W=_(157),Y=_(158),Z=_(159),U=_(160),q=_(161),Q=_(162),X=_(163),$=_(164),ee=_(165),te=_(166),_e=_(10),ne=_(301),le=_(302),oe=_(303),ie=_(304),ae=_(305),ue=_(306),se=_(307),he=_(308),de=_(436),re=_(429),Me=_(62);_.d(t,"BookingPageModuleNgFactory",function(){return pe});var ce=this&&this.__extends||function(){var e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var _ in t)t.hasOwnProperty(_)&&(e[_]=t[_])};return function(t,_){function n(){this.constructor=t}e(t,_),t.prototype=null===_?Object.create(_):(n.prototype=_.prototype,new n)}}(),we=function(e){function t(t){return e.call(this,t,[ne.a,le.a,oe.a,ie.a,ae.a,ue.a,se.a,he.a,de.a],[])||this}return ce(t,e),Object.defineProperty(t.prototype,"_NgLocalization_56",{get:function(){return null==this.__NgLocalization_56&&(this.__NgLocalization_56=new o.a(this.parent.get(n.c))),this.__NgLocalization_56},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"_ɵi_57",{get:function(){return null==this.__ɵi_57&&(this.__ɵi_57=new i.a),this.__ɵi_57},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"_FormBuilder_58",{get:function(){return null==this.__FormBuilder_58&&(this.__FormBuilder_58=new i.b),this.__FormBuilder_58},enumerable:!0,configurable:!0}),t.prototype.createInternal=function(){return this._CommonModule_0=new o.d,this._ɵba_1=new i.c,this._FormsModule_2=new i.d,this._ReactiveFormsModule_3=new i.e,this._BackdropModule_4=new a.a,this._ButtonModule_5=new u.a,this._IconModule_6=new s.a,this._ActionSheetModule_7=new h.a,this._AlertModule_8=new d.a,this._NavModule_9=new r.a,this._AppModule_10=new M.a,this._AvatarModule_11=new c.a,this._BadgeModule_12=new w.a,this._CardModule_13=new p.a,this._CheckboxModule_14=new g.a,this._ChipModule_15=new b.a,this._ClickBlockModule_16=new f.a,this._ContentModule_17=new m.a,this._DateTimeModule_18=new y.a,this._FabModule_19=new v.a,this._GridModule_20=new S.a,this._ImgModule_21=new I.a,this._SpinnerModule_22=new P.a,this._InfiniteScrollModule_23=new k.a,this._InputModule_24=new B.a,this._LabelModule_25=new T.a,this._ItemModule_26=new L.a,this._ListModule_27=new N.a,this._LoadingModule_28=new O.a,this._MenuModule_29=new A.a,this._ModalModule_30=new C.a,this._NavbarModule_31=new F.a,this._NoteModule_32=new R.a,this._OptionModule_33=new z.a,this._PickerModule_34=new j.a,this._PopoverModule_35=new D.a,this._RadioModule_36=new J.a,this._RangeModule_37=new x.a,this._RefresherModule_38=new E.a,this._ScrollModule_39=new G.a,this._SearchbarModule_40=new H.a,this._SegmentModule_41=new K.a,this._SelectModule_42=new V.a,this._ShowHideWhenModule_43=new W.a,this._SlidesModule_44=new Y.a,this._SplitPaneModule_45=new Z.a,this._TabsModule_46=new U.a,this._ThumbnailModule_47=new q.a,this._ToastModule_48=new Q.a,this._ToggleModule_49=new X.a,this._ToolbarModule_50=new $.a,this._TypographyModule_51=new ee.a,this._VirtualScrollModule_52=new te.a,this._IonicModule_53=new _e.b,this._IonicPageModule_54=new _e.c,this._BookingPageModule_55=new l.a,this._LAZY_LOADED_TOKEN_59=re.a,this._BookingPageModule_55},t.prototype.getInternal=function(e,t){return e===o.d?this._CommonModule_0:e===i.c?this._ɵba_1:e===i.d?this._FormsModule_2:e===i.e?this._ReactiveFormsModule_3:e===a.a?this._BackdropModule_4:e===u.a?this._ButtonModule_5:e===s.a?this._IconModule_6:e===h.a?this._ActionSheetModule_7:e===d.a?this._AlertModule_8:e===r.a?this._NavModule_9:e===M.a?this._AppModule_10:e===c.a?this._AvatarModule_11:e===w.a?this._BadgeModule_12:e===p.a?this._CardModule_13:e===g.a?this._CheckboxModule_14:e===b.a?this._ChipModule_15:e===f.a?this._ClickBlockModule_16:e===m.a?this._ContentModule_17:e===y.a?this._DateTimeModule_18:e===v.a?this._FabModule_19:e===S.a?this._GridModule_20:e===I.a?this._ImgModule_21:e===P.a?this._SpinnerModule_22:e===k.a?this._InfiniteScrollModule_23:e===B.a?this._InputModule_24:e===T.a?this._LabelModule_25:e===L.a?this._ItemModule_26:e===N.a?this._ListModule_27:e===O.a?this._LoadingModule_28:e===A.a?this._MenuModule_29:e===C.a?this._ModalModule_30:e===F.a?this._NavbarModule_31:e===R.a?this._NoteModule_32:e===z.a?this._OptionModule_33:e===j.a?this._PickerModule_34:e===D.a?this._PopoverModule_35:e===J.a?this._RadioModule_36:e===x.a?this._RangeModule_37:e===E.a?this._RefresherModule_38:e===G.a?this._ScrollModule_39:e===H.a?this._SearchbarModule_40:e===K.a?this._SegmentModule_41:e===V.a?this._SelectModule_42:e===W.a?this._ShowHideWhenModule_43:e===Y.a?this._SlidesModule_44:e===Z.a?this._SplitPaneModule_45:e===U.a?this._TabsModule_46:e===q.a?this._ThumbnailModule_47:e===Q.a?this._ToastModule_48:e===X.a?this._ToggleModule_49:e===$.a?this._ToolbarModule_50:e===ee.a?this._TypographyModule_51:e===te.a?this._VirtualScrollModule_52:e===_e.b?this._IonicModule_53:e===_e.c?this._IonicPageModule_54:e===l.a?this._BookingPageModule_55:e===o.e?this._NgLocalization_56:e===i.a?this._ɵi_57:e===i.b?this._FormBuilder_58:e===Me.d?this._LAZY_LOADED_TOKEN_59:t},t.prototype.destroyInternal=function(){},t}(n.x),pe=new n.y(we,l.a)},429:function(e,t,_){"use strict";_(0),_(10),_(46);_.d(t,"a",function(){return n});var n=(this&&this.__decorate,this&&this.__metadata,function(){function e(e,t,_,n){this.navCtrl=e,this.navParams=t,this.sanitize=_}return e.prototype.urlpaste=function(){return this.my_url="https://africanblockchain.org/book-a-seat/",this.sanitize.bypassSecurityTrustResourceUrl(this.my_url)},e}())},435:function(e,t,_){"use strict";_(0),_(10),_(429);_.d(t,"a",function(){return n});var n=(this&&this.__decorate,function(){function e(){}return e}())},436:function(e,t,_){"use strict";function n(e){return o._20(0,[(e()(),o._24(null,["\n"])),(e()(),o._22(0,null,null,10,"ion-header",[],null,null,null,null,null)),o._23(8192,null,0,i.a,[a.c,o.I,o.J,[2,u.a]],null,null),(e()(),o._24(null,["\n\n  "])),(e()(),o._22(0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,s.a,s.b)),o._23(24576,null,0,h.a,[d.a,[2,u.a],[2,r.a],a.c,o.I,o.J],null,null),(e()(),o._24(3,["\n    "])),(e()(),o._22(0,null,3,2,"ion-title",[],null,null,null,M.a,M.b)),o._23(24576,null,0,c.a,[a.c,o.I,o.J,[2,w.a],[2,h.a]],null,null),(e()(),o._24(0,["Booking"])),(e()(),o._24(3,["\n  "])),(e()(),o._24(null,["\n\n"])),(e()(),o._24(null,["\n\n"])),(e()(),o._22(0,null,null,4,"ion-content",[],[[2,"statusbar-padding",null]],null,null,p.a,p.b)),o._23(2187264,null,0,g.a,[a.c,b.b,f.a,o.I,o.J,d.a,m.a,o.g,[2,u.a],[2,r.a]],null,null),(e()(),o._24(1,["\n\n  "])),(e()(),o._22(0,null,1,0,"iframe",[["height","100%"],["width","100%"]],[[8,"src",5]],null,null,null,null)),(e()(),o._24(1,["\n\n"])),(e()(),o._24(null,["\n"]))],null,function(e,t){var _=t.component;e(t,4,0,o._25(t,5)._hidden,o._25(t,5)._sbPadding),e(t,13,0,o._25(t,14).statusbarPadding),e(t,16,0,_.urlpaste())})}function l(e){return o._20(0,[(e()(),o._22(0,null,null,1,"page-booking",[],null,null,null,n,P)),o._23(24576,null,0,y.a,[r.a,v.a,S.p,b.b],null,null)],null,null)}var o=_(0),i=_(24),a=_(1),u=_(4),s=_(28),h=_(19),d=_(5),r=_(11),M=_(35),c=_(29),w=_(21),p=_(25),g=_(13),b=_(2),f=_(6),m=_(12),y=_(429),v=_(16),S=_(46);_.d(t,"a",function(){return k});var I=[],P=o._19({encapsulation:2,styles:I,data:{}}),k=o._27("page-booking",y.a,l,{},{},[])}});
-//# sourceMappingURL=F:\ionic\abc\www\build\4.main.js.map
+webpackJsonp([4],{
+
+/***/ 369:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__booking__ = __webpack_require__(375);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookingPageModule", function() { return BookingPageModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var BookingPageModule = (function () {
+    function BookingPageModule() {
+    }
+    return BookingPageModule;
+}());
+BookingPageModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__booking__["a" /* BookingPage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__booking__["a" /* BookingPage */]),
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__booking__["a" /* BookingPage */]
+        ]
+    })
+], BookingPageModule);
+
+//# sourceMappingURL=booking.module.js.map
+
+/***/ }),
+
+/***/ 375:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(28);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BookingPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var BookingPage = (function () {
+    function BookingPage(navCtrl, navParams, sanitize, platform) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.sanitize = sanitize;
+        // platform.registerBackButtonAction(() => {
+        //   console.log("backPressed 1");
+        //   this.navCtrl.setRoot('WelcomePage');
+        // },1);
+    }
+    BookingPage.prototype.urlpaste = function () {
+        this.my_url = "https://africanblockchain.org/book-a-seat/";
+        return this.sanitize.bypassSecurityTrustResourceUrl(this.my_url);
+    };
+    return BookingPage;
+}());
+BookingPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
+        selector: 'page-booking',template:/*ion-inline-start:"F:\ionic\abc\src\pages\booking\booking.html"*/'\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Booking</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <iframe  height="100%" width="100%" [src]="urlpaste()"></iframe>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"F:\ionic\abc\src\pages\booking\booking.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]])
+], BookingPage);
+
+//# sourceMappingURL=booking.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=4.main.js.map

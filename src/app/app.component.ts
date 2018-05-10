@@ -111,16 +111,10 @@ export class MyApp {
   platformReady() {
     // Call any initial plugins when ready
     this.platform.ready().then(() => {
+      // this.statusBar.styleLightContent();
       this.splashScreen.hide();
     });
   }
-
-  // initializeApp() {
-  //   this.platform.ready().then(() => {
-  //     this.statusBar.styleLightContent();
-  //     this.splashScreen.hide();
-  //   });
-  // }
 
   openPage(page) {
     this.nav.setRoot(page.component);
