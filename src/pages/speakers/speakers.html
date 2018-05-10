@@ -11,8 +11,6 @@
 
 
 <ion-content>
-  <!--<ion-spinner name="bubbles" padding class="spinnerCenter"></ion-spinner>-->
-
   <ion-list padding class="spinnerCenter" *ngIf="checkStatus">
     <ion-spinner name="crescent"></ion-spinner>
   </ion-list>
@@ -22,7 +20,7 @@
         <img src="{{speaker.picture}}"/>
       </ion-avatar>
       <h2>{{speaker.name}}</h2>
-      <p>{{speaker.title}}</p>
+      <p>{{speaker.title}} {{speaker.company}}</p>
     </button>
   </ion-list>
 

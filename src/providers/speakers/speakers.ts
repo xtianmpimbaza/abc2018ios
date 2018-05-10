@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import {Storage} from '@ionic/storage';
 
 const STORAGE_KEY = 'speakers';
+const SPONSORS_KEY = 'sponsors';
 
 
 @Injectable()
@@ -31,9 +32,17 @@ export class SpeakersProvider {
   }
 
   saveSpeakers(speakers) {
-    return this.storage.set(STORAGE_KEY, speakers).then(data =>{
+    return this.storage.set(STORAGE_KEY, speakers).then(data => {
       console.log(data);
-    }, err =>{
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  saveSponsors(sponsor) {
+    return this.storage.set(SPONSORS_KEY, sponsor).then(data => {
+      console.log(data);
+    }, err => {
       console.log(err);
     });
   }
@@ -50,6 +59,10 @@ export class SpeakersProvider {
 
   getAllSpeakers() {
     return this.storage.get(STORAGE_KEY);
+  }
+
+  getAllSponsors() {
+    return this.storage.get(SPONSORS_KEY);
   }
 
 }

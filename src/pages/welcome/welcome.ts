@@ -4,6 +4,7 @@ import {GlobalVars} from "../../providers/global-vars";
 import {UserProvider} from "../../providers/user/user";
 import {HomePage} from "../home/home";
 import {Storage} from "@ionic/storage";
+import {AttendeesService} from "../../services/attendees-service";
 
 
 @Component({
@@ -18,6 +19,7 @@ export class WelcomePage {
     public global: GlobalVars,
     private user: UserProvider,
     private storage: Storage,
+    public service: AttendeesService,
     public events: Events) {
 
     storage.get('login_key').then((logged) => {
@@ -32,10 +34,23 @@ export class WelcomePage {
     this.navCtrl.push(page);
   }
 
+  isMailValid(email, ticket){
+    console.log(email + ticket);
+    if ( this.service.login()){
+      return true;
+    }
+    return false;
+  }
+
   presentPrompt() {
     let alert = this.alertCtrl.create({
       title: 'Login',
       inputs: [
+        {
+          name: 'email',
+          placeholder: 'Email',
+          type: 'Email'
+        },
         {
           name: 'ticket',
           placeholder: 'Ticket Number',
@@ -53,8 +68,9 @@ export class WelcomePage {
         {
           text: 'Login',
           handler: data => {
-
-            if (data.ticket.length <= 2) {
+            if (data.ticket.length <= 2 || !this.isMailValid(data.email, data.ticket)) {
+              this.global.toast("Invalid email or ticket", "red");
+              alert.dismiss();
               return false;
             } else {
               this.user.saveUserLog(data.ticket);

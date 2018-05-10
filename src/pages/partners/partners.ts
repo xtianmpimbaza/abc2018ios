@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController} from 'ionic-angular';
 // import {ExhibitorsDetailsPage} from "../exhibitors-details/exhibitors-details";
-import {AttendeesService} from "../../services/attendees-service";
-import {PartnersDetailsPage} from "../partners-details/partners-details";
+// import {AttendeesService} from "../../services/attendees-service";
+// import {PartnersDetailsPage} from "../partners-details/partners-details";
+// import {BrokerDetailPage} from "../broker-detail/broker-detail";
+import {SpeakersProvider} from "../../providers/speakers/speakers";
+import {BrokerService} from "../../providers/broker-service-mock";
 
 @IonicPage()
 @Component({
@@ -11,37 +14,61 @@ import {PartnersDetailsPage} from "../partners-details/partners-details";
 })
 export class PartnersPage {
 
-  attendees: Array<any>;
+  speakers: any = [];
+  loaded: boolean;
+  checkStatus: boolean = true;
   searchKey: string = "";
-  search: boolean = false;
 
-  constructor(public navCtrl: NavController, public service: AttendeesService) {
-    service.getAll().then(data => this.attendees = data);
+  constructor(public navCtrl: NavController, public service: BrokerService, public speakersProvider: SpeakersProvider) {
+    this.loaded = false;
+    this.getSpeakers();
+    this.getPosts();
   }
 
-  openSpeakerDetail(exb) {
-    this.navCtrl.push(PartnersDetailsPage, exb);
+  ngOnInit(): void {
+    // this.getSpeakers();
+    // this.getPosts();
   }
 
-  setSearch(){
-    this.search = true;
+  getSpeakers() {
+    this.speakersProvider.getAllSponsors().then(data => {
+      this.speakers = data
+      this.checkStatus = false;
+    }).catch(error => alert(JSON.stringify(error)));
   }
-  onInput(event) {
-    this.service.findByName(this.searchKey)
-      .then(data => {
-        this.attendees = data;
-        // if (this.viewMode === "map") {
-        //   this.showMarkers();
-        // }
+
+  openSpeakerDetail(broker) {
+    // this.navCtrl.push(BrokerDetailPage, broker);
+    console.log(broker);
+  }
+
+  getItems(ev) {
+    // Reset items back to all of the items
+    // this.initializeItems();
+    // this.getSpeakers();
+    // set val to the value of the ev target
+    var val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.speakers = this.speakers.filter((item) => {
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
-      .catch(error => alert(JSON.stringify(error)));
+    }
   }
 
   onCancel(event) {
-    // this.findAll();
-    this.service.getAll().then(data => this.attendees = data);
-    this.search = false;
+    this.getSpeakers()
   }
 
+  getPosts() {
+    this.service.getSponsors().subscribe(data => {
+        this.speakersProvider.saveSponsors(data);
+        this.speakers = data;
+      },
+      err => {
+        console.log(err);
+      });
+  }
 
 }

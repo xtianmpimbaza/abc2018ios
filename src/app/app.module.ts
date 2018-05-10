@@ -39,7 +39,7 @@ import {ExhibitorsDetailsPageModule} from "../pages/exhibitors-details/exhibitor
 // import { DatabaseProvider } from '..\providers\database/database';
 
 import { IonicStorageModule } from '@ionic/storage';
-import { DatabaseProvider } from '../providers/database/database';
+// import { DatabaseProvider } from '../providers/database/database';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { SQLite } from '@ionic-native/sqlite';
 import {UserProvider} from "../providers/user/user";
@@ -108,7 +108,6 @@ import { SpeakersProvider } from '../providers/speakers/speakers';
     UserProvider,
     SpeakersProvider,
     GlobalVars,
-    DatabaseProvider,
     SQLitePorter,
     SQLite,
     // FCM,

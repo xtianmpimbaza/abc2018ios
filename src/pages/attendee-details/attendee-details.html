@@ -5,7 +5,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Team Member Details</ion-title>
+    <ion-title>Delegate Details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,7 +16,7 @@
   <ion-card>
 
     <ion-card-content>
-      <img src="{{attendee.picture}}"/>
+      <!--<img src="{{attendee.picture}}"/>-->
       <h2>{{attendee.Name}}</h2>
       <h3>{{attendee.Position}}</h3>
     </ion-card-content>
@@ -29,7 +29,7 @@
         <h2 text-wrap>{{attendee.Company}}</h2>
       </a>
       <a ion-item>
-        <ion-icon name="ios-globe" item-left></ion-icon>
+        <ion-icon name="ios-contact" item-left></ion-icon>
         <p>Position</p>
         <h2 text-wrap>{{attendee.Position}}</h2>
       </a>
@@ -37,7 +37,7 @@
       <a ion-item>
         <ion-icon name="mail" item-left></ion-icon>
         <p>Connect</p>
-        <h2>Tap to send email</h2>
+        <h2>Tap to connect</h2>
       </a>
     </ion-list>
 

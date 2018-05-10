@@ -41,7 +41,7 @@ export class ExhibitorsPage {
   onCancel(event) {
     // this.findAll();
     this.service.getAll().then(data => this.attendees = data);
-    this.search = false;
+    // this.search = false;
   }
 
   // send() {

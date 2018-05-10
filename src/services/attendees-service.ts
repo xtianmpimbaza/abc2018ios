@@ -19,4 +19,8 @@ export class AttendeesService {
       (attendee.Name +  ' ' + attendee.Company + ' ' + attendee.Position).toUpperCase().indexOf(key) > -1));
   }
 
+  login(){
+    return true;
+  }
+
 }

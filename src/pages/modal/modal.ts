@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ViewController} from 'ionic-angular';
 
-import { FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 // import {Validators, FormBuilder, FormGroup} from "@angular/forms";
 // import {GlobalVars} from "../../providers/global-vars";
 import {Http} from "@angular/http";
@@ -18,8 +18,6 @@ export class ModalPage implements OnInit {
   credentialsForm: FormGroup;
 
   @ViewChild('myInput') myInput: ElementRef;
-
-
 
   constructor(
     public navCtrl: NavController,
@@ -51,6 +49,7 @@ export class ModalPage implements OnInit {
   ngOnInit(): void {
     // setTimeout(() => this.adjust(), 0);
   }
+
   //
   // adjust(): void {
   //   const textArea = this.myInput['_elementRef'].nativeElement.getElementsByTagName('textarea')[0];
@@ -80,7 +79,7 @@ export class ModalPage implements OnInit {
     let email = {
       app: 'gmail',
       to: this.credentialsForm.value.email_to,
-      subject: 'Request to Blockchain conference Attendee',
+      subject: 'P2P from Africa Blockchain',
       body: this.credentialsForm.value.no_html,
       isHtml: true
     };
@@ -124,5 +123,8 @@ export class ModalPage implements OnInit {
     // });
     this.closeModal();
   }
+
+  // subject: 'Request to Blockchain conference Attendee',
+  //P2P from Africa Blockchain
 
 }

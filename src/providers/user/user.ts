@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Storage} from '@ionic/storage';
-import {HomePage} from "../../pages/home/home";
-import {WelcomePage} from "../../pages/welcome/welcome";
+// import {HomePage} from "../../pages/home/home";
+// import {WelcomePage} from "../../pages/welcome/welcome";
 import {Events} from "ionic-angular";
 //import {isEmpty} from "rxjs/operator/isEmpty";
 

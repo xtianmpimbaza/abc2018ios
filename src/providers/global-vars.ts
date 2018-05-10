@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class GlobalVars {
   public api_url: string = 'https://abc2018mailer.herokuapp.com/getspeakers/';
+  public sponsors_url: string = 'https://abc2018mailer.herokuapp.com/getsponsors/';
   // public api_url: string = 'http://localhost:4000/getspeakers/';
   public username: string;
   public password: string;
@@ -20,10 +21,9 @@ export class GlobalVars {
   toast(message: string, style: string) {
     let toast = this.toastCtrl.create({
       message: message,
-      duration: 3000,
-      cssClass: style
+      duration: 4000,
+      cssClass: style,
     });
-
     toast.present();
   }
 

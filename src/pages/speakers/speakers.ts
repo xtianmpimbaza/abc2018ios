@@ -14,7 +14,7 @@ export class SpeakersPage implements OnInit {
 
   speakers: any = [];
   loaded: boolean;
-  checkStatus: boolean = true;
+  checkStatus = true;
 
   constructor(public navCtrl: NavController, public service: BrokerService, public speakersProvider: SpeakersProvider) {
     this.loaded = false;
@@ -30,7 +30,9 @@ export class SpeakersPage implements OnInit {
   getSpeakers(){
     this.speakersProvider.getAllSpeakers().then(data => {
       this.speakers = data
-      this.checkStatus = false;
+      if (data.length > 0) {
+        this.checkStatus = false;
+      }
     }).catch(error => alert(JSON.stringify(error)));
   }
 

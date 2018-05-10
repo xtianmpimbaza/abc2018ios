@@ -40,7 +40,7 @@ export class MyApp {
     {title: 'Speakers', component: SpeakersPage, icon: 'ios-volume-up'},
     {title: 'Partners', component: PartnersPage, icon: 'md-reorder'},
     {title: 'Exhibitors', component: ExhibitorsPage, icon: 'ios-contact'},
-    {title: 'Attendees', component: SponsorsPage, icon: 'ios-contacts'},
+    {title: 'Delegates', component: SponsorsPage, icon: 'ios-contacts'},
     {title: 'Schedule', component: SchedulePage, icon: 'ios-calendar'},
     {title: 'Breakout', component: BreakoutPage, icon: 'ios-alarm'}
   ];
@@ -68,8 +68,8 @@ export class MyApp {
     this.listenToLoginEvents();
 
     this.helpMenuItems = [
-      {title: 'About', component: AboutPage, icon: 'information-circle'},
-      {title: 'Contact us', component: ContactUsPage, icon: 'mail'}
+      {title: 'Welcome', component: AboutPage, icon: 'information-circle'},
+      {title: 'About us', component: ContactUsPage, icon: 'mail'}
     ];
 
     storage.get('login_key').then((logged) => {
