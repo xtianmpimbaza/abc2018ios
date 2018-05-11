@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
-import {EmailComposer} from "@ionic-native/email-composer";
 import {AttendeesService} from "../../services/attendees-service";
 import {AttendeeDetailsPage} from "../attendee-details/attendee-details";
 
@@ -14,47 +13,53 @@ export class SponsorsPage {
   attendees: Array<any>;
   searchKey: string = "";
   search: boolean = false;
+  checkStatus = true;
+  attendees_backup: any = [];
+  url: string = 'http://localhost/appapi/christian.php';
 
-  constructor(public navCtrl: NavController, public service: AttendeesService, private emailComposer: EmailComposer) {
-    service.getAll().then(data => this.attendees = data);
+  constructor(public navCtrl: NavController, public service: AttendeesService) {
+
+    this.getDelegates();
+    this.getPosts();
   }
 
-  openSpeakerDetail(broker) {
-    this.navCtrl.push(AttendeeDetailsPage, broker);
+  getDelegates(){
+    this.service.getDelegates().then(data => {
+      this.attendees = data
+      this.attendees_backup = data;
+      if (data.length > 0) {
+        this.checkStatus = false;
+      }
+    }).catch(error => alert(JSON.stringify(error)));
   }
 
-  setSearch(){
-    this.search = true;
-  }
-  onInput(event) {
-    this.service.findByName(this.searchKey)
-      .then(data => {
+  getPosts() {
+    this.service.getDels().subscribe(data => {
+        this.service.saveDelegates(data);
         this.attendees = data;
+      },
+      err => {
+        console.log(err);
+      });
+  }
+
+  openSpeakerDetail(delegate) {
+    this.navCtrl.push(AttendeeDetailsPage, delegate);
+  }
+
+  getItems(ev) {
+    this.attendees = this.attendees_backup;
+    var val = ev.target.value;
+
+    if (val && val.trim() != '') {
+      this.attendees = this.attendees.filter((delegate) => {
+        return ((delegate.first_name +  ' ' + delegate.last_name + ' ' + delegate.company+ ' ' + delegate.position).toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
-      .catch(error => alert(JSON.stringify(error)));
+    }
   }
 
   onCancel(event) {
-    // this.findAll();
-    this.service.getAll().then(data => this.attendees = data);
-    this.search = false;
+      this.attendees = this.attendees_backup;
   }
 
-  send() {
-    let email = {
-      to: 'xtianm4@gmail.com',
-      subject: 'Cordova Icons',
-      body: 'How are you? Nice greetings from Leipzig',
-      isHtml: true
-    };
-
-    this.emailComposer.open(email);
-
-    this.emailComposer.isAvailable().then((available: boolean) => {
-      if (available) {
-        //Now we know we can send
-      }
-    });
-
-  }
 }

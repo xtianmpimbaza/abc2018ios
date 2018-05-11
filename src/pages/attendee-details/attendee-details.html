@@ -15,8 +15,8 @@
   <ion-card>
     <ion-card-content>
       <!--<img src="{{attendee.picture}}"/>-->
-      <h2>{{attendee.Name}}</h2>
-      <h3>{{attendee.Position}}</h3>
+      <h2>{{attendee.first_name}} {{attendee.last_name}}</h2>
+      <h3>{{attendee.position}}</h3>
     </ion-card-content>
 
     <ion-list (click)="sendMail()">
@@ -24,12 +24,12 @@
       <a ion-item>
         <ion-icon name="ios-globe" item-left></ion-icon>
         <p>Company</p>
-        <h2 text-wrap>{{attendee.Company}}</h2>
+        <h2 text-wrap>{{attendee.company}}</h2>
       </a>
       <a ion-item>
         <ion-icon name="ios-contact" item-left></ion-icon>
         <p>Position</p>
-        <h2 text-wrap>{{attendee.Position}}</h2>
+        <h2 text-wrap>{{attendee.position}}</h2>
       </a>
 
       <a ion-item>

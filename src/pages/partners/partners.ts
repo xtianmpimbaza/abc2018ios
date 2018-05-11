@@ -14,27 +14,21 @@ import {BrokerService} from "../../providers/broker-service-mock";
 })
 export class PartnersPage {
 
-  speakers: any = [];
-  speakers_backup: any = [];
+  partners: any = [];
+  partners_backup: any = [];
   loaded: boolean;
   checkStatus: boolean = true;
-  searchKey: string = "";
 
-  constructor(public navCtrl: NavController, public service: BrokerService, public speakersProvider: SpeakersProvider) {
+  constructor(public navCtrl: NavController, public service: BrokerService, public partnersProvider: SpeakersProvider) {
     this.loaded = false;
-    this.getSpeakers();
+    this.getPartners();
     this.getPosts();
   }
 
-  ngOnInit(): void {
-    // this.getSpeakers();
-    // this.getPosts();
-  }
-
-  getSpeakers() {
-    this.speakersProvider.getAllSponsors().then(data => {
-      this.speakers = data;
-      this.speakers_backup = data;
+  getPartners() {
+    this.partnersProvider.getAllSponsors().then(data => {
+      this.partners = data;
+      this.partners_backup = data;
       this.checkStatus = false;
     }).catch(error => alert(JSON.stringify(error)));
   }
@@ -47,13 +41,13 @@ export class PartnersPage {
   getItems(ev) {
     // Reset items back to all of the items
     // this.initializeItems();
-    this.speakers = this.speakers_backup;
+    this.partners = this.partners_backup;
 
     var val = ev.target.value;
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.speakers = this.speakers.filter((item) => {
+      this.partners = this.partners.filter((item) => {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
@@ -63,16 +57,16 @@ export class PartnersPage {
     console.log("cleaning search");
     // this.service.getAll().then(data => this.attendees = data);
     // this.search = false;
-    this.speakersProvider.getAllSponsors().then(data => {
-      this.speakers = data
+    this.partnersProvider.getAllSponsors().then(data => {
+      this.partners = data
       this.checkStatus = false;
     }).catch(error => alert(JSON.stringify(error)));
   }
 
   getPosts() {
     this.service.getSponsors().subscribe(data => {
-        this.speakersProvider.saveSponsors(data);
-        this.speakers = data;
+        this.partnersProvider.saveSponsors(data);
+        this.partners = data;
       },
       err => {
         console.log(err);

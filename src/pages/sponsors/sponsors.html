@@ -17,7 +17,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+    <ion-searchbar [(ngModel)]="searchKey" (ionInput)="getItems($event)"
                    (ionCancel)="onCancel($event)" placeholder="Search for attendees" autocomplete="true"></ion-searchbar>
   </ion-navbar>
 
@@ -30,8 +30,8 @@
       <h2 item-left>
       <!--<img src="{{speaker.picture}}"/>-->{{speaker.id}}
       </h2>
-      <h2>{{speaker.Name}}</h2>
-      <p>{{speaker.Company}}</p>
+      <h2>{{speaker.first_name}} {{speaker.last_name}}</h2>
+      <p>{{speaker.company}}</p>
     </button>
   </ion-list>
   <!--<ion-list>-->

@@ -24444,6 +24444,10 @@ ion-footer {
   padding: 8px 16px !important;
 }
 
+page-schedule .tab-item-active {
+  background: green !important;
+}
+
 page-speakers .spinnerCenter {
   display: -webkit-flex;
   display: -ms-flexbox;

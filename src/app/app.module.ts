@@ -47,6 +47,7 @@ import {ListPage} from "../pages/list/list";
 import {AttendeeDetailsPageModule} from "../pages/attendee-details/attendee-details.module";
 import {PartnersPageModule} from "../pages/partners/partners.module";
 import { SpeakersProvider } from '../providers/speakers/speakers';
+// import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { SpeakersProvider } from '../providers/speakers/speakers';
     ContactUsPageModule,
     EventPageModule,
     ExhibitorsPageModule,
+    // HttpClientModule,
     SchedulePageModule,
     SpeakersPageModule,
     PartnersPageModule,

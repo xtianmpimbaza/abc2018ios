@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-navbar>
@@ -20,11 +19,11 @@
     <ion-spinner name="crescent"></ion-spinner>
   </ion-list>
   <ion-list>
-    <button ion-item *ngFor="let speaker of speakers" (click)="openSpeakerDetail(speaker)">
+    <button ion-item *ngFor="let partner of partners" (click)="openSpeakerDetail(speaker)">
       <ion-avatar item-left>
-        <img src="{{speaker.picture}}"/>
+        <img src="{{partner.picture}}"/>
       </ion-avatar>
-      <h2>{{speaker.name}}</h2>
+      <h2>{{partner.name}}</h2>
       <!--<p>{{speaker.title}}</p>-->
     </button>
   </ion-list>

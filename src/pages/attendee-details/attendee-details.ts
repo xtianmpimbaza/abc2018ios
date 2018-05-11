@@ -30,9 +30,6 @@ export class AttendeeDetailsPage {
   ) {
     console.log(this.navParams.data);
     this.attendee = this.navParams.data;
-    service.findById(this.attendee.id).then(
-      attendee => this.attendee = attendee
-    );
   }
 
   send(mail) {
@@ -104,10 +101,9 @@ export class AttendeeDetailsPage {
   }
 
   public openModal() {
-    var data = { mail_receipiennt : this.attendee.Email };
+    var data = { mail_receipiennt : this.attendee.email };
     var modalPage = this.modalCtrl.create('ModalPage',data);
     modalPage.present();
   }
-
 
 }
