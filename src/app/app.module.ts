@@ -36,10 +36,7 @@ import {SchedulePageModule} from "../pages/schedule/schedule.module";
 import {SpeakersPageModule} from "../pages/speakers/speakers.module";
 import {SponsorsPageModule} from "../pages/sponsors/sponsors.module";
 import {ExhibitorsDetailsPageModule} from "../pages/exhibitors-details/exhibitors-details.module";
-// import { DatabaseProvider } from '..\providers\database/database';
-
 import { IonicStorageModule } from '@ionic/storage';
-// import { DatabaseProvider } from '../providers/database/database';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { SQLite } from '@ionic-native/sqlite';
 import {UserProvider} from "../providers/user/user";
@@ -47,7 +44,8 @@ import {ListPage} from "../pages/list/list";
 import {AttendeeDetailsPageModule} from "../pages/attendee-details/attendee-details.module";
 import {PartnersPageModule} from "../pages/partners/partners.module";
 import { SpeakersProvider } from '../providers/speakers/speakers';
-// import {HttpClientModule} from '@angular/common/http';
+import {ScheduleDetailsPageModule} from "../pages/schedule-details/schedule-details.module";
+import {ExhibitorsService} from "../services/exhibitors-service";
 
 @NgModule({
   declarations: [
@@ -71,13 +69,13 @@ import { SpeakersProvider } from '../providers/speakers/speakers';
     ContactUsPageModule,
     EventPageModule,
     ExhibitorsPageModule,
-    // HttpClientModule,
     SchedulePageModule,
     SpeakersPageModule,
     PartnersPageModule,
     AttendeeDetailsPageModule,
     SponsorsPageModule,
     ExhibitorsDetailsPageModule,
+    ScheduleDetailsPageModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
   ],
@@ -107,6 +105,7 @@ import { SpeakersProvider } from '../providers/speakers/speakers';
     AttendeesService,
     EmailService,
     EmailComposer,
+    ExhibitorsService,
     UserProvider,
     SpeakersProvider,
     GlobalVars,

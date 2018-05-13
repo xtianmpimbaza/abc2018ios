@@ -13,27 +13,41 @@ import {SpeakersProvider} from "../../providers/speakers/speakers";
 export class SpeakersPage implements OnInit {
 
   speakers: any = [];
-  loaded: boolean;
+  speakers_backup: any = [];
   checkStatus = true;
 
   constructor(public navCtrl: NavController, public service: BrokerService, public speakersProvider: SpeakersProvider) {
-    this.loaded = false;
+    this.checkStatus = true;
     this.getSpeakers();
     this.getPosts();
   }
 
   ngOnInit(): void {
-    // this.getSpeakers();
-    // this.getPosts();
+  }
+
+  getItems(ev) {
+    this.speakers = this.speakers_backup;
+    var val = ev.target.value;
+
+    if (val && val.trim() != '') {
+      this.speakers = this.speakers.filter((sp) => {
+        return ((sp.name +  ' ' + sp.title + ' ' + sp.company).toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  onCancel(event) {
+    this.speakers = this.speakers_backup;
   }
 
   getSpeakers(){
     this.speakersProvider.getAllSpeakers().then(data => {
-      this.speakers = data
-      if (data.length > 0) {
+      // if (data.length > 0) {
         this.checkStatus = false;
-      }
-    }).catch(error => alert(JSON.stringify(error)));
+      // }
+      this.speakers = data
+      this.speakers_backup = data
+    }).catch(error => console.log(error));
   }
 
   openSpeakerDetail(broker) {
@@ -44,8 +58,6 @@ export class SpeakersPage implements OnInit {
     this.service.getSpeakers().subscribe(data => {
         this.speakersProvider.saveSpeakers(data);
         this.speakers = data;
-      // this.getSpeakers();
-
       },
       err => {
         console.log(err);

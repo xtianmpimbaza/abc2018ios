@@ -1,5 +1,12 @@
 page-schedule {
-  .tab-item-active{
-    background:green !important;
+
+  ion-segment{
+    background: #f8f8f8;
+  }
+
+  ion-footer{
+    //background: #cc050f;
+    //color: white;
+    background: #f0f0f0;
   }
 }

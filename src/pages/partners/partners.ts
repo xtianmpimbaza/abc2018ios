@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
-// import {ExhibitorsDetailsPage} from "../exhibitors-details/exhibitors-details";
-// import {AttendeesService} from "../../services/attendees-service";
-// import {PartnersDetailsPage} from "../partners-details/partners-details";
-// import {BrokerDetailPage} from "../broker-detail/broker-detail";
+
 import {SpeakersProvider} from "../../providers/speakers/speakers";
 import {BrokerService} from "../../providers/broker-service-mock";
 
@@ -58,9 +55,9 @@ export class PartnersPage {
     // this.service.getAll().then(data => this.attendees = data);
     // this.search = false;
     this.partnersProvider.getAllSponsors().then(data => {
-      this.partners = data
+      this.partners = data;
       this.checkStatus = false;
-    }).catch(error => alert(JSON.stringify(error)));
+    }).catch(error => console.log(error));
   }
 
   getPosts() {

@@ -4,16 +4,17 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Speakers</ion-title>
+    <ion-searchbar (ionInput)="getItems($event)"
+                   (ionCancel)="onCancel($event)" placeholder="Speakers" autocomplete="true"></ion-searchbar>
+    <!--<ion-title>Speakers</ion-title>-->
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content>
-  <ion-list padding class="spinnerCenter" *ngIf="checkStatus">
-    <ion-spinner name="crescent"></ion-spinner>
-  </ion-list>
+  <!--<ion-list padding class="spinnerCenter" *ngIf="checkStatus">-->
+    <!--<ion-spinner name="crescent"></ion-spinner>-->
+  <!--</ion-list>-->
   <ion-list>
     <button ion-item *ngFor="let speaker of speakers" (click)="openSpeakerDetail(speaker)">
       <ion-avatar item-left>

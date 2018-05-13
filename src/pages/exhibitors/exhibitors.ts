@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-// import {AttendeeDetailsPage} from "../attendee-details/attendee-details";
-// import {EmailComposer} from "@ionic-native/email-composer";
-import {AttendeesService} from "../../services/attendees-service";
+import {Component} from '@angular/core';
+import {IonicPage, NavController} from 'ionic-angular';
 import {ExhibitorsDetailsPage} from "../exhibitors-details/exhibitors-details";
+import {ExhibitorsService} from "../../services/exhibitors-service";
 
 @IonicPage()
 @Component({
@@ -12,55 +10,53 @@ import {ExhibitorsDetailsPage} from "../exhibitors-details/exhibitors-details";
 })
 export class ExhibitorsPage {
 
-  attendees: Array<any>;
+  exhibitors: Array<any>;
+  exhibitors_backup = [];
   searchKey: string = "";
   search: boolean = false;
+  checkStatus = true;
 
-  constructor(public navCtrl: NavController, public service: AttendeesService) {
-    service.getAll().then(data => this.attendees = data);
+  constructor(public navCtrl: NavController, public service: ExhibitorsService) {
+    this.getDelegates();
+    this.getPosts();
+  }
+
+  getDelegates() {
+    this.service.getExhibitors().then(data => {
+      this.exhibitors = data
+      this.exhibitors_backup = data;
+      if (data.length > 0) {
+        this.checkStatus = false;
+      }
+    }).catch(error => console.log(error));
+  }
+
+  getPosts() {
+    this.service.getExps().subscribe(data => {
+        this.service.saveExhibitors(data);
+        this.exhibitors = data;
+      },
+      err => {
+        console.log(err);
+      });
   }
 
   openSpeakerDetail(exb) {
-    this.navCtrl.push(ExhibitorsDetailsPage, exb);
+    // this.navCtrl.push(ExhibitorsDetailsPage, exb);
   }
 
-  setSearch(){
-    this.search = true;
-  }
-  onInput(event) {
-    this.service.findByName(this.searchKey)
-      .then(data => {
-        this.attendees = data;
-        // if (this.viewMode === "map") {
-        //   this.showMarkers();
-        // }
+  onInput(ev) {
+    this.exhibitors = this.exhibitors_backup;
+    var val = ev.target.value;
+
+    if (val && val.trim() != '') {
+      this.exhibitors = this.exhibitors.filter((delegate) => {
+        return (delegate.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
-      .catch(error => alert(JSON.stringify(error)));
+    }
   }
 
   onCancel(event) {
-    // this.findAll();
-    console.log("cleaning search");
-    // this.service.getAll().then(data => this.attendees = data);
-    // this.search = false;
+    this.exhibitors = this.exhibitors_backup;
   }
-
-  // send() {
-  //   let email = {
-  //     to: 'xtianm4@gmail.com',
-  //     subject: 'Cordova Icons',
-  //     body: 'How are you? Nice greetings from Leipzig',
-  //     isHtml: true
-  //   };
-  //
-  //   this.emailComposer.open(email);
-  //
-  //   this.emailComposer.isAvailable().then((available: boolean) => {
-  //     if (available) {
-  //       //Now we know we can send
-  //     }
-  //   });
-  //
-  // }
-
 }

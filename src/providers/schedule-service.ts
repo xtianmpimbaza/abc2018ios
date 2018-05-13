@@ -1,15 +1,32 @@
 import {Injectable} from '@angular/core';
 import scheduleone from './scheduleone';
+import {Http} from "@angular/http";
+import {GlobalVars} from "./global-vars";
+import {Storage} from "@ionic/storage";
+const STORAGE_KEY = 'day_one_program';
 
 @Injectable()
 export class ScheduleOneService {
 
-    findAll() {
-        return Promise.resolve(scheduleone);
-    }
+  url: string = 'https://abc2018mailer.herokuapp.com/getprogram/';
 
-    findById(id) {
-        return Promise.resolve(scheduleone[id - 1]);
-    }
+  constructor(private http: Http, public storage: Storage) {
+
+  }
+
+  getDayOne() {
+    return this.storage.get(STORAGE_KEY);
+  }
+
+  saveUpdate(exh) {
+    return this.storage.set(STORAGE_KEY, exh).then(data => {
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  getUpdate() {
+    return this.http.get(this.url).map(res => res.json());
+  }
 
 }

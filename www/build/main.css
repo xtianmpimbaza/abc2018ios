@@ -24363,6 +24363,11 @@ page-breakout .hall_name {
   font-weight: bold;
 }
 
+.broker .speakercontent {
+  text-align: justify;
+  background: #f0f0f0;
+}
+
 .broker ion-card {
   margin-top: 100px;
   overflow: visible;
@@ -24444,8 +24449,12 @@ ion-footer {
   padding: 8px 16px !important;
 }
 
-page-schedule .tab-item-active {
-  background: green !important;
+page-schedule ion-segment {
+  background: #f8f8f8;
+}
+
+page-schedule ion-footer {
+  background: #f0f0f0;
 }
 
 page-speakers .spinnerCenter {

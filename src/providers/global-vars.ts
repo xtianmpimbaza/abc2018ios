@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 export class GlobalVars {
   public api_url: string = 'https://abc2018mailer.herokuapp.com/getspeakers/';
   public sponsors_url: string = 'https://abc2018mailer.herokuapp.com/getsponsors/';
+  public exhibitors_url: string = 'https://abc2018mailer.herokuapp.com/getexhibitors/';
   // public api_url: string = 'http://localhost:4000/getspeakers/';
   public username: string;
   public password: string;
@@ -27,15 +28,15 @@ export class GlobalVars {
     toast.present();
   }
 
-  isLoged() {
-    this.storage.get('user').then((val) => {
-      if (val) {
-        return true;
-      }else {
-        return false
-      }
-    });
-  }
+  // isLoged() {
+  //   this.storage.get('user').then((val) => {
+  //     if (val) {
+  //       return true;
+  //     }else {
+  //       return false
+  //     }
+  //   });
+  // }
 
 
 }

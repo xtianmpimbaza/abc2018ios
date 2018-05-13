@@ -1,10 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ScheduleOneService} from "../../providers/schedule-service";
-import {ScheduleTwoService} from "../../providers/scheduletwo-service";
-import {Http} from "@angular/http";
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import {ScheduleDetailsPage} from "../schedule-details/schedule-details";
 
 @IonicPage()
 @Component({
@@ -14,46 +11,44 @@ import {Http} from "@angular/http";
 export class SchedulePage {
 
   viewMode: string = "first";
-  firstSchedule = [];
+  firstSchedule: Array<any>;
   secondSchedule: Array<any>;
-  api_url: string = 'https://www.adin.ug/abc2018/api/christian.php'
-  // developers = [];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private http: Http,
-              schOneService: ScheduleOneService,
-              schTwoService: ScheduleTwoService) {
-    schOneService.findAll().then(data => this.firstSchedule = data).catch(error => alert(JSON.stringify(error)));;
-    // this.databaseprovider.getDatabaseState().subscribe(rdy => {
-    //   if (rdy) {
-    //     this.loadDeveloperData();
-    //   }
-    // })
-    this.getSchedule();
-    schTwoService.findAll().then(data => this.secondSchedule = data).catch(error => alert(JSON.stringify(error)));;
+              private schOneService: ScheduleOneService) {
+
+    this.getDayOne();
+    this.updateProgram();
   }
 
-  getSchedule(){
-    new Promise(resolve => {
-      this.http.post(this.api_url, {'auth':'246fb595064db95e76bbdd828cf7207662a6baaf', 'table':'delegates'})
-        .map(res => res.json())
-        .subscribe((result) => {
-            console.log(result);
-          },
-          (err) => {
-            console.log(err);
-          });
-    });
+  getDayOne() {
+    this.firstSchedule = [];
+    this.secondSchedule = [];
+    this.schOneService.getDayOne().then(data => {
+      if (data) {
+        for (let item of data) {
+          if (String(new Date(item.date).getUTCDate()).match('23')) {
+            this.firstSchedule.push(item);
+          } else if (String(new Date(item.date).getUTCDate()).match('24')) {
+            this.secondSchedule.push(item);
+          }
+        }
+      }
+    }).catch(error => console.log(error));
   }
 
-  // loadDeveloperData() {
-  //   this.databaseprovider.getAllDevelopers().then(data => {
-  //     this.firstSchedule = data;
-  //   })
-  // }
+  updateProgram() {
+    this.schOneService.getUpdate().subscribe(data => {
+        this.schOneService.saveUpdate(data);
+        this.getDayOne();
+      },
+      err => {
+        console.log(err);
+      });
+  }
 
-
-
-
+  openDetails(item) {
+    this.navCtrl.push(ScheduleDetailsPage, item);
+  }
 }

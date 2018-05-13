@@ -30,7 +30,7 @@ export class SponsorsPage {
       if (data.length > 0) {
         this.checkStatus = false;
       }
-    }).catch(error => alert(JSON.stringify(error)));
+    }).catch(error => console.log(error));
   }
 
   getPosts() {

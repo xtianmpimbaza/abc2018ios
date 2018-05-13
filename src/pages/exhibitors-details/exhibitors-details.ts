@@ -30,9 +30,9 @@ export class ExhibitorsDetailsPage {
   ) {
     console.log(this.navParams.data);
     this.attendee = this.navParams.data;
-    service.findById(this.attendee.id).then(
-      attendee => this.attendee = attendee
-    );
+    // service.findById(this.attendee.id).then(
+    //   attendee => this.attendee = attendee
+    // );
   }
 
 }
