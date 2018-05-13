@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.conference.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AfricanBlockchain</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <description>African Blockchain Confrence</description>
+    <author email="cmpimbaza@btafrica.com" href="http://btafrica.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -87,6 +87,7 @@
     <allow-navigation href="http://192.168.43.225:8100" />
     <allow-navigation href="http://192.168.42.143:8100" />
     <allow-navigation href="http://192.168.1.33:8100" />
+    <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.2.1" />
@@ -97,5 +98,4 @@
     <plugin name="cordova-sqlite-storage" spec="^2.3.1" />
     <plugin name="uk.co.workingedge.cordova.plugin.sqliteporter" spec="^1.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
-    <engine name="android" spec="~7.0.0" />
 </widget>

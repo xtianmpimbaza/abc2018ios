@@ -9,11 +9,8 @@ import { Platform } from 'ionic-angular';
 })
 export class BookingPage {
   my_url: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitize: DomSanitizer, platform: Platform) {
-    // platform.registerBackButtonAction(() => {
-    //   console.log("backPressed 1");
-    //   this.navCtrl.setRoot('WelcomePage');
-    // },1);
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitize: DomSanitizer) {
+
   }
 
   urlpaste(){

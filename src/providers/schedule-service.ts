@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
-import scheduleone from './scheduleone';
 import {Http} from "@angular/http";
-import {GlobalVars} from "./global-vars";
 import {Storage} from "@ionic/storage";
 const STORAGE_KEY = 'day_one_program';
 
