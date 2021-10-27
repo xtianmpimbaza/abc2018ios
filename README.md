@@ -1,4 +1,4 @@
-# Ionic DreamHouse
+# African blockchain conference
 
 African blockchain conference with Ionic 2. 
 
